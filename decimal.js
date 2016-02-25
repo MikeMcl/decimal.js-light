@@ -1,10 +1,10 @@
-/*! decimal.js-light v1.0.0 https://github.com/MikeMcl/decimal.js-light/LICENCE */
+/*! decimal.js-light v1.0.2 https://github.com/MikeMcl/decimal.js-light/LICENCE */
 ;(function (globalScope) {
   'use strict';
 
 
   /*
-   *  decimal.js-light v1.0.0
+   *  decimal.js-light v1.0.2
    *  An arbitrary-precision Decimal type for JavaScript.
    *  https://github.com/MikeMcl/decimal.js-light
    *  Copyright (c) 2016 Michael Mclaughlin <M8ch88l@gmail.com>

@@ -3,7 +3,7 @@ if (typeof T === 'undefined') require('../setup');
 T('dividedToIntegerBy', function () {
 
   function t(dividend, divisor, expected) {
-    T.assertEqual(expected, new Decimal(dividend).divToInt(divisor).valueOf());
+    T.assertEqual(expected, new Decimal(dividend).idiv(divisor).valueOf());
   }
 
   Decimal.config({

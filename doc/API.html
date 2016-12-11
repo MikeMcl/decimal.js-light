@@ -67,8 +67,6 @@ li span{float:right;margin-right:10px;color:#c0c0c0}
     <ul>
       <li><a href="#Dclone"     >clone</a></li>
       <li><a href="#Dconfig"    >config</a></li>
-      <li><a href="#Dmax"       >max</a></li>
-      <li><a href="#Dmin"       >min</a></li>
     </ul>
 
     <a href="#constructor-properties">Properties</a>
@@ -95,13 +93,11 @@ li span{float:right;margin-right:10px;color:#c0c0c0}
     <a href="#prototype-methods">Methods</a>
     <ul>
       <li><a href="#abs"          >absoluteValue           </a><span>abs</span>     </li>
-      <li><a href="#ceil"         >ceil                    </a>                     </li>
       <li><a href="#cmp"          >comparedTo              </a><span>cmp</span>     </li>
       <li><a href="#dp"           >decimalPlaces           </a><span>dp</span>      </li>
       <li><a href="#div"          >dividedBy               </a><span>div</span>     </li>
       <li><a href="#idiv"         >dividedToIntegerBy      </a><span>idiv</span></li>
       <li><a href="#eq"           >equals                  </a><span>eq</span>      </li>
-      <li><a href="#floor"        >floor                   </a>                     </li>
       <li><a href="#gt"           >greaterThan             </a><span>gt</span>      </li>
       <li><a href="#gte"          >greaterThanOrEqualTo    </a><span>gte</span>     </li>
       <li><a href="#isint"        >isInteger               </a><span>isint</span>   </li>
@@ -299,30 +295,6 @@ Decimal.config({
 
 
 
-    <h5 id="Dmax">
-      max<code class='inset'>.max([x [, y, ...]]) <i>&rArr; Decimal</i></code>
-    </h5>
-    <p>
-      <code>x</code>: <i>number|string|Decimal</i><br />
-      <code>y</code>: <i>number|string|Decimal</i>
-    </p>
-    <p>Returns a new Decimal whose value is the maximum of the <code>arguments</code>.</p>
-    <pre>r = Decimal.max(x, y, z)</pre>
-
-
-
-    <h5 id="Dmin">
-      min<code class='inset'>.min([x [, y, ...]]) <i>&rArr; Decimal</i></code>
-    </h5>
-    <p>
-      <code>x</code>: <i>number|string|Decimal</i><br />
-      <code>y</code>: <i>number|string|Decimal</i>
-    </p>
-    <p>Returns a new Decimal whose value is the minimum of the <code>arguments</code>.</p>
-    <pre>r = Decimal.min(x, y, z)</pre>
-
-
-
     <h4 id="constructor-properties">Properties</h4>
     <p>The properties of a Decimal constructor.</p>
 
@@ -358,7 +330,6 @@ Decimal.precision = 0
       All functions which return a Decimal will return the value to <code>precision</code>
       significant digits except <a href='#decimal'><code>Decimal</code></a>,
       <a href='#abs'><code>absoluteValue</code></a>,
-      <a href='#ceil'><code>ceil</code></a>, <a href='#floor'><code>floor</code></a>,
       <a href='#neg'><code>negated</code></a>, <a href='#round'><code>toInteger</code></a>, and
       <a href='#todp'><code>toDecimalPlaces</code></a>.
     </p>
@@ -496,7 +467,7 @@ Decimal.rounding                   // 2</pre>
     <p>The methods inherited by a Decimal instance from its constructor's prototype object.</p>
     <p>A Decimal instance is immutable in the sense that it is not changed by its methods.</p>
     <p>Methods that return a Decimal can be chained:</p>
-    <pre>x = new Decimal(2).times('999.999999999999999').dividedBy(4).ceil()</pre>
+    <pre>x = new Decimal(2).times('999.999999999999999').dividedBy(4).toFixed(2)</pre>
     <p>Methods do not round their arguments before execution.</p>
     <p>
       Many method names have a shorter alias. (Internally, the library always uses the shorter
@@ -518,23 +489,6 @@ Decimal.rounding                   // 2</pre>
 x = new Decimal(-0.8)
 y = x.absoluteValue()         // '0.8'
 z = y.abs()                   // '0.8'</pre>
-
-
-
-    <h5 id="ceil">ceil<code class='inset'>.ceil() <i>&rArr; Decimal</i></code></h5>
-    <p>
-      Returns a new Decimal whose value is the value of this Decimal rounded to a whole number in
-      the direction of positive <code>Infinity</code>.
-    </p>
-    <p>
-      The return value is not affected by the value of the
-      <a href='#precision'><code>precision</code></a> setting.
-    </p>
-    <pre>
-x = new Decimal(1.3)
-x.ceil()                      // '2'
-y = new Decimal(-1.8)
-y.ceil()                      // '-1'</pre>
 
 
 
@@ -618,23 +572,6 @@ x.idiv(0.7)             // '7'</pre>
 0 === 1e-324                     // true
 x = new Decimal(0)
 x.equals('1e-324')               // false</pre>
-
-
-
-    <h5 id="floor">floor<code class='inset'>.floor() <i>&rArr; Decimal</i></code></h5>
-    <p>
-      Returns a new Decimal whose value is the value of this Decimal rounded to a whole number in
-      the direction of negative <code>Infinity</code>.
-    </p>
-    <p>
-      The return value is not affected by the value of the
-      <a href='#precision'><code>precision</code></a> setting.
-    </p>
-    <pre>
-x = new Decimal(1.8)
-x.floor()                   // '1'
-y = new Decimal(-1.3)
-y.floor()                   // '-2'</pre>
 
 
 

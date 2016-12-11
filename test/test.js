@@ -6,7 +6,6 @@ console.log('\n Testing decimal.js-light\n');
 
 [
   'abs',
-  'ceil',
   'clone',
   'cmp',
   'config',
@@ -15,13 +14,11 @@ console.log('\n Testing decimal.js-light\n');
   'idiv',
   'dpSd',
   'exp',
-  'floor',
   'immutability',
   'intPow',
   'is',
   'ln',
   'log',
-  'minAndMax',
   'minus',
   'mod',
   'neg',

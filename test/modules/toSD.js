@@ -3,7 +3,7 @@ if (typeof T === 'undefined') require('../setup');
 T('toSignificantDigits', function () {
 
   function t(expected, n, sd, rm) {
-    T.assertEqual(expected, new Decimal(n).toSD(sd, rm).valueOf());
+    T.assertEqual(expected, new Decimal(n).tosd(sd, rm).valueOf());
   }
 
   function tx(fn, msg) {
@@ -17,7 +17,7 @@ T('toSignificantDigits', function () {
     toExpPos: 9e15
   });
 
-  T.assert(Decimal.prototype.toSD === Decimal.prototype.toSignificantDigits);
+  T.assert(Decimal.prototype.tosd === Decimal.prototype.toSignificantDigits);
 
   t('0', 0);
   t('0.5', 0.5);
@@ -516,32 +516,32 @@ T('toSignificantDigits', function () {
   t('9.48094821522133194405126162122334e+351074489623', '9.4809482152213319440512616212233329955405089941555240223386E+351074489623', 33, 0);
   t('3.9748340091494161936502395814742749549562853206914631e+3139', '3.97483400914941619365023958147427495495628532069146310E+3139', 55, 4);
 
-  tx(function () {new Decimal('12.345').toSD('3')}, ".toSD('3')");
-  tx(function () {new Decimal('12.345').toSD(new Decimal('3'))}, ".toSD(new Decimal('3'))");
-  tx(function () {new Decimal('12.345').toSD(NaN)}, ".toSD(NaN)");
-  tx(function () {new Decimal('12.345').toSD(null)}, ".toSD(null)");
+  tx(function () {new Decimal('12.345').tosd('3')}, ".tosd('3')");
+  tx(function () {new Decimal('12.345').tosd(new Decimal('3'))}, ".tosd(new Decimal('3'))");
+  tx(function () {new Decimal('12.345').tosd(NaN)}, ".tosd(NaN)");
+  tx(function () {new Decimal('12.345').tosd(null)}, ".tosd(null)");
 
-  tx(function () {new Decimal('12.345').toSD(NaN)}, ".toSD(NaN)");
-  tx(function () {new Decimal('12.345').toSD('NaN')}, ".toSD('NaN')");
-  tx(function () {new Decimal('12.345').toSD([])}, ".toSD([])");
-  tx(function () {new Decimal('12.345').toSD({})}, ".toSD({})");
-  tx(function () {new Decimal('12.345').toSD('')}, ".toSD('')");
-  tx(function () {new Decimal('12.345').toSD(' ')}, ".toSD(' ')");
-  tx(function () {new Decimal('12.345').toSD('hello')}, ".toSD('hello')");
-  tx(function () {new Decimal('12.345').toSD('\t')}, ".toSD('\t')");
-  tx(function () {new Decimal('12.345').toSD(new Date)}, ".toSD(new Date)");
-  tx(function () {new Decimal('12.345').toSD(new RegExp)}, ".toSD(new RegExp)");
-  tx(function () {new Decimal('12.345').toSD(7.5)}, ".toSD(7.5)");
-  tx(function () {new Decimal('12.345').toSD('1.1e1')}, ".toSD('1.1e1')");
-  tx(function () {new Decimal('12.345').toSD(0, 1)}, ".toSD(0, 1)");
-  tx(function () {new Decimal('12.345').toSD(1, '2')}, ".toSD(1, '2')");
-  tx(function () {new Decimal('12.345').toSD(1, 2.3)}, ".toSD(1, 2.3)");
-  tx(function () {new Decimal('12.345').toSD('0')}, ".toSD('0')");
-  tx(function () {new Decimal('12.345').toSD('-1')}, ".toSD('-1')");
-  tx(function () {new Decimal('12.345').toSD(-23)}, ".toSD(-23)");
-  tx(function () {new Decimal('12.345').toSD(1e9 + 1)}, ".toSD(1e9 + 1)");
-  tx(function () {new Decimal('12.345').toSD('-0.01')}, ".toSD('-0.01')");
-  tx(function () {new Decimal('12.345').toSD('-1e-1')}, ".toSD('-1e-1')");
-  tx(function () {new Decimal('12.345').toSD(Infinity)}, ".toSD(Infinity)");
-  tx(function () {new Decimal('12.345').toSD('-Infinity')}, ".toSD('-Infinity')");
+  tx(function () {new Decimal('12.345').tosd(NaN)}, ".tosd(NaN)");
+  tx(function () {new Decimal('12.345').tosd('NaN')}, ".tosd('NaN')");
+  tx(function () {new Decimal('12.345').tosd([])}, ".tosd([])");
+  tx(function () {new Decimal('12.345').tosd({})}, ".tosd({})");
+  tx(function () {new Decimal('12.345').tosd('')}, ".tosd('')");
+  tx(function () {new Decimal('12.345').tosd(' ')}, ".tosd(' ')");
+  tx(function () {new Decimal('12.345').tosd('hello')}, ".tosd('hello')");
+  tx(function () {new Decimal('12.345').tosd('\t')}, ".tosd('\t')");
+  tx(function () {new Decimal('12.345').tosd(new Date)}, ".tosd(new Date)");
+  tx(function () {new Decimal('12.345').tosd(new RegExp)}, ".tosd(new RegExp)");
+  tx(function () {new Decimal('12.345').tosd(7.5)}, ".tosd(7.5)");
+  tx(function () {new Decimal('12.345').tosd('1.1e1')}, ".tosd('1.1e1')");
+  tx(function () {new Decimal('12.345').tosd(0, 1)}, ".tosd(0, 1)");
+  tx(function () {new Decimal('12.345').tosd(1, '2')}, ".tosd(1, '2')");
+  tx(function () {new Decimal('12.345').tosd(1, 2.3)}, ".tosd(1, 2.3)");
+  tx(function () {new Decimal('12.345').tosd('0')}, ".tosd('0')");
+  tx(function () {new Decimal('12.345').tosd('-1')}, ".tosd('-1')");
+  tx(function () {new Decimal('12.345').tosd(-23)}, ".tosd(-23)");
+  tx(function () {new Decimal('12.345').tosd(1e9 + 1)}, ".tosd(1e9 + 1)");
+  tx(function () {new Decimal('12.345').tosd('-0.01')}, ".tosd('-0.01')");
+  tx(function () {new Decimal('12.345').tosd('-1e-1')}, ".tosd('-1e-1')");
+  tx(function () {new Decimal('12.345').tosd(Infinity)}, ".tosd(Infinity)");
+  tx(function () {new Decimal('12.345').tosd('-Infinity')}, ".tosd('-Infinity')");
 });

@@ -48,9 +48,6 @@ T('immutability', function () {
     t(a, aa);
     t(x, y);
 
-    x = a.ceil();
-    t(a, aa);
-
     x = a.comparedTo(b);
     t(a, aa);
     t(b, bb);
@@ -88,9 +85,6 @@ T('immutability', function () {
     t(a, aa);
     t(b, bb);
     T.assertEqual(x, y);
-
-    x = a.floor();
-    t(a, aa);
 
     x = a.greaterThan(b);
     t(a, aa);
@@ -224,7 +218,7 @@ T('immutability', function () {
 
     x = a.toDecimalPlaces(n);
     t(a, aa);
-    y = a.toDP(n);
+    y = a.todp(n);
     t(a, aa);
     t(x, y);
 
@@ -252,7 +246,7 @@ T('immutability', function () {
 
     x = a.toSignificantDigits(n);
     t(a, aa);
-    y = a.toSD(n);
+    y = a.tosd(n);
     t(a, aa);
     t(x, y);
 

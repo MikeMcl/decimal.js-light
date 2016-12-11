@@ -93,13 +93,11 @@
 
   /*
    *  absoluteValue                       abs
-   *  ceil
    *  comparedTo                          cmp
    *  decimalPlaces                       dp
    *  dividedBy                           div
    *  dividedToIntegerBy                  idiv
    *  equals                              eq
-   *  floor
    *  greaterThan                         gt
    *  greaterThanOrEqualTo                gte
    *  isInteger                           isint
@@ -139,16 +137,6 @@
     var x = new this.constructor(this);
     if (x.s) x.s = 1;
     return x;
-  };
-
-
-  /*
-   * Return a new Decimal whose value is the value of this Decimal rounded to a whole number in the
-   * direction of positive Infinity.
-   *
-   */
-  P.ceil = function () {
-    return round(new this.constructor(this), getBase10Exponent(this) + 1, 2);
   };
 
 
@@ -229,16 +217,6 @@
    */
   P.equals = P.eq = function (y) {
     return !this.cmp(y);
-  };
-
-
-  /*
-   * Return a new Decimal whose value is the value of this Decimal rounded to a whole number in the
-   * direction of negative Infinity.
-   *
-   */
-  P.floor = function () {
-    return round(new this.constructor(this), getBase10Exponent(this) + 1, 3);
   };
 
 
@@ -914,16 +892,15 @@
    *  digitsToString      P.log, P.sqrt, P.pow, toString, exp, ln
    *  divide              P.div, P.idiv, P.log, P.mod, P.sqrt, exp, ln
    *  exp                 P.exp, P.pow
-   *  getBase10Exponent   P.ceil, P.floor, P.sd, P.toint, P.sqrt, P.todp, P.toFixed, P.toPrecision,
-   *                      P.toString, divide, round, toString, exp, ln
+   *  getBase10Exponent   P.sd, P.toint, P.sqrt, P.todp, P.toFixed, P.toPrecision, P.toString,
+   *                      divide, round, toString, exp, ln
    *  getLn10             P.log, ln
    *  getZeroString       digitsToString, toString
    *  ln                  P.log, P.ln, P.pow, exp
-   *  maxOrMin            max, min
    *  parseDecimal        Decimal
-   *  round               P.abs, P.ceil, P.idiv, P.floor, P.log, P.minus, P.mod, P.neg, P.plus,
-   *                      P.toint, P.sqrt, P.times, P.todp, P.toExponential, P.toFixed, P.pow,
-   *                      P.toPrecision, P.tosd, divide, getLn10, exp, ln
+   *  round               P.abs, P.idiv, P.log, P.minus, P.mod, P.neg, P.plus, P.toint, P.sqrt,
+   *                      P.times, P.todp, P.toExponential, P.toFixed, P.pow, P.toPrecision, P.tosd,
+   *                      divide, getLn10, exp, ln
    *  subtract            P.minus, P.plus
    *  toString            P.toExponential, P.toFixed, P.toPrecision, P.toString, P.valueOf
    *  truncate            P.pow
@@ -1494,18 +1471,6 @@
 
 
   /*
-   * Handle `max` and `min`. `ltgt` is 'lt' or 'gt'.
-   */
-  function maxOrMin(Ctor, args, ltgt) {
-    var y,
-      x = new Ctor(args[0]),
-      i = 0;
-    for (; ++i < args.length;) if (x[ltgt](y = new Ctor(args[i]))) x = y;
-    return x;
-  }
-
-
-  /*
    * Parse the value of a new Decimal `x` from string `str`.
    */
   function parseDecimal(x, str) {
@@ -1861,8 +1826,6 @@
   /*
    *  clone
    *  config
-   *  max
-   *  min
    */
 
 
@@ -2007,28 +1970,6 @@
     }
 
     return this;
-  }
-
-
-  /*
-   * Return a new Decimal whose value is the maximum of the arguments.
-   *
-   * arguments {number|string|Decimal}
-   *
-   */
-  function max() {
-    return maxOrMin(this, arguments, 'lt');
-  }
-
-
-  /*
-   * Return a new Decimal whose value is the minimum of the arguments.
-   *
-   * arguments {number|string|Decimal}
-   *
-   */
-  function min() {
-    return maxOrMin(this, arguments, 'gt');
   }
 
 

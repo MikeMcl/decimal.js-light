@@ -19,8 +19,6 @@
     // `toDecimalPlaces`, `toExponential`, `toFixed`, `toPrecision` and `toSignificantDigits`.
   var MAX_DIGITS = 1e9,                        // 0 to 1e9
 
-    // The natural logarithm of 10 (415 digits).
-    LN10 = '2.302585092994045684017991454684364207601101488628772976033327900967572609677352480235997205089598298341967784042286248633409525465082806756666287369098781689482907208325554680843799894826233198528393505308965377732628846163366222287698219886746543667474404243274365155048934314939391479619404400222105101714174800368808401264708068556774321622835522011480466371565912137345074785694768346361679210180644507064800027',
 
     // The initial configuration properties of the Decimal constructor.
     Decimal = {
@@ -56,7 +54,13 @@
 
       // The exponent value at and above which `toString` returns exponential notation.
       // JavaScript numbers: 21
-      toExpPos:  21                          // 0 to MAX_E
+      toExpPos:  21,                         // 0 to MAX_E
+
+      // The natural logarithm of 10.
+      // 415 digits
+      //LN10: '2.302585092994045684017991454684364207601101488628772976033327900967572609677352480235997205089598298341967784042286248633409525465082806756666287369098781689482907208325554680843799894826233198528393505308965377732628846163366222287698219886746543667474404243274365155048934314939391479619404400222105101714174800368808401264708068556774321622835522011480466371565912137345074785694768346361679210180644507064800027'
+      // 115 digits
+      LN10: '2.302585092994045684017991454684364207601101488628772976033327900967572609677352480235997205089598298341967784042286'
     },
 
 
@@ -79,8 +83,6 @@
     LOG_BASE = 7,
     MAX_SAFE_INTEGER = 9007199254740991,
     MAX_E = mathfloor(MAX_SAFE_INTEGER / LOG_BASE),    // 1286742750677284
-
-    LN10_PRECISION = LN10.length - 1,
 
     // Decimal.prototype object
     P = {};
@@ -1369,7 +1371,9 @@
 
 
    function getLn10(Ctor, sd, pr) {
-    if (sd > LN10_PRECISION) {
+
+    if (sd > Ctor.LN10.sd()) {
+
 
       // Reset global state in case the exception is caught.
       external = true;
@@ -1377,7 +1381,7 @@
       throw Error(decimalError + 'LN10 precision limit exceeded');
     }
 
-    return round(new Ctor(LN10), sd);
+    return round(new Ctor(Ctor.LN10), sd);
   }
 
 
@@ -1967,7 +1971,7 @@
 
     if (obj === void 0) obj = {};
     if (obj) {
-      ps = ['precision', 'rounding', 'toExpNeg', 'toExpPos'];
+      ps = ['precision', 'rounding', 'toExpNeg', 'toExpPos', 'LN10'];
       for (i = 0; i < ps.length;) if (!obj.hasOwnProperty(p = ps[i++])) obj[p] = this[p];
     }
 
@@ -2009,6 +2013,11 @@
       }
     }
 
+    if ((v = obj[p = 'LN10']) !== void 0) {
+        if (v == Math.LN10) this[p] = new this(v);
+        else throw Error(invalidArgument + p + ': ' + v);
+    }
+
     return this;
   }
 
@@ -2038,9 +2047,8 @@
   // Create and configure initial Decimal constructor.
   Decimal = clone(Decimal);
 
-  // Internal constants.
+  // Internal constant.
   ONE = new Decimal(1);
-  LN10 = new Decimal(LN10);
 
 
   // Export.
@@ -2054,7 +2062,7 @@
 
   // Node and other environments that support module.exports.
   } else if (typeof module != 'undefined' && module.exports) {
-    module.exports = Decimal;
+    module.exports = Decimal.default = Decimal.Decimal = Decimal;
 
     // Browser.
   } else {

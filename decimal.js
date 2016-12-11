@@ -97,7 +97,7 @@
    *  comparedTo                cmp
    *  decimalPlaces             dp
    *  dividedBy                 div
-   *  dividedToIntegerBy        divToInt
+   *  dividedToIntegerBy        idiv
    *  equals                    eq
    *  floor
    *  greaterThan               gt
@@ -127,7 +127,6 @@
    *  toPrecision
    *  toSignificantDigits       toSD
    *  toString
-   *  truncated                 trunc
    *  valueOf
    */
 
@@ -217,7 +216,7 @@
    * by the value of `y`, truncated to `precision` significant digits.
    *
    */
-  P.dividedToIntegerBy = P.divToInt = function (y) {
+  P.dividedToIntegerBy = P.idiv = function (y) {
     var x = this,
       Ctor = x.constructor;
     return round(divide(x, new Ctor(y), 0, 1), Ctor.precision);
@@ -906,15 +905,6 @@
   };
 
 
-  /*
-   * Return a new Decimal whose value is the value of this Decimal truncated to a whole number.
-   *
-   */
-  P.truncated = P.trunc = function () {
-    return round(new this.constructor(this), getBase10Exponent(this) + 1);
-  };
-
-
   // Helper functions for Decimal.prototype (P) and/or Decimal methods, and their callers.
 
 
@@ -922,18 +912,18 @@
    *  add                 P.minus, P.plus
    *  checkInt32          P.toDP, P.toExponential, P.toFixed, P.toPrecision, P.toSD
    *  digitsToString      P.log, P.sqrt, P.pow, toString, exp, ln
-   *  divide              P.div, P.divToInt, P.log, P.mod, P.sqrt, exp, ln
+   *  divide              P.div, P.idiv, P.log, P.mod, P.sqrt, exp, ln
    *  exp                 P.exp, P.pow
    *  getBase10Exponent   P.ceil, P.floor, P.sd, P.round, P.sqrt, P.toDP, P.toFixed, P.toPrecision,
-   *                      P.toString, P.trunc, divide, round, toString, exp, ln
+   *                      P.toString, divide, round, toString, exp, ln
    *  getLn10             P.log, ln
    *  getZeroString       digitsToString, toString
    *  ln                  P.log, P.ln, P.pow, exp
    *  maxOrMin            max, min
    *  parseDecimal        Decimal
-   *  round               P.abs, P.ceil, P.divToInt, P.floor, P.log, P.minus, P.mod, P.neg, P.plus,
+   *  round               P.abs, P.ceil, P.idiv, P.floor, P.log, P.minus, P.mod, P.neg, P.plus,
    *                      P.round, P.sqrt, P.times, P.toDP, P.toExponential, P.toFixed, P.pow,
-   *                      P.toPrecision, P.toSD, P.trunc, divide, getLn10, exp, ln
+   *                      P.toPrecision, P.toSD, divide, getLn10, exp, ln
    *  subtract            P.minus, P.plus
    *  toString            P.toExponential, P.toFixed, P.toPrecision, P.toString, P.valueOf
    *  truncate            P.pow
@@ -1965,9 +1955,7 @@
     Decimal.ROUND_HALF_FLOOR = 8;
 
     Decimal.clone = clone;
-    Decimal.config = config;
-    Decimal.max = max;
-    Decimal.min = min;
+    Decimal.config = Decimal.set = config;
 
     if (obj === void 0) obj = {};
     if (obj) {

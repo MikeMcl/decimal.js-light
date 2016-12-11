@@ -99,7 +99,7 @@ li span{float:right;margin-right:10px;color:#c0c0c0}
       <li><a href="#cmp"          >comparedTo              </a><span>cmp</span>     </li>
       <li><a href="#dp"           >decimalPlaces           </a><span>dp</span>      </li>
       <li><a href="#div"          >dividedBy               </a><span>div</span>     </li>
-      <li><a href="#divToInt"     >dividedToIntegerBy      </a><span>divToInt</span></li>
+      <li><a href="#idiv"         >dividedToIntegerBy      </a><span>idiv</span></li>
       <li><a href="#eq"           >equals                  </a><span>eq</span>      </li>
       <li><a href="#floor"        >floor                   </a>                     </li>
       <li><a href="#gt"           >greaterThan             </a><span>gt</span>      </li>
@@ -131,7 +131,6 @@ li span{float:right;margin-right:10px;color:#c0c0c0}
       <li><a href="#toPrecision"  >toPrecision             </a>                     </li>
       <li><a href="#toSD"         >toSignificantDigits     </a><span>toSD</span>    </li>
       <li><a href="#toString"     >toString                </a>                     </li>
-      <li><a href="#trunc"        >truncated               </a><span>trunc</span>   </li>
       <li><a href="#valueOf"      >valueOf                 </a>                     </li>
     </ul>
 
@@ -361,9 +360,8 @@ Decimal.precision = 0
       significant digits except <a href='#decimal'><code>Decimal</code></a>,
       <a href='#abs'><code>absoluteValue</code></a>,
       <a href='#ceil'><code>ceil</code></a>, <a href='#floor'><code>floor</code></a>,
-      <a href='#neg'><code>negated</code></a>, <a href='#round'><code>round</code></a>,
-      <a href='#toDP'><code>toDecimalPlaces</code></a> and
-      <a href='#trunc'><code>truncated</code></a>.
+      <a href='#neg'><code>negated</code></a>, <a href='#round'><code>round</code></a>, and
+      <a href='#toDP'><code>toDecimalPlaces</code></a>.
     </p>
     <pre>Decimal.config({ precision: 5 })
 Decimal.precision                  // 5</pre>
@@ -593,8 +591,8 @@ x.div(5)                   // '71'</pre>
 
 
 
-    <h5 id="divToInt">
-      dividedToIntegerBy<code class='inset'>.divToInt(x) <i>&rArr; Decimal</i></code>
+    <h5 id="idiv">
+      dividedToIntegerBy<code class='inset'>.idiv(x) <i>&rArr; Decimal</i></code>
     </h5>
     <p><code>x</code>: <i>number|string|Decimal</i></p>
     <p>
@@ -606,7 +604,7 @@ x.div(5)                   // '71'</pre>
 x = new Decimal(5)
 y = new Decimal(3)
 x.dividedToIntegerBy(y)     // '1'
-x.divToInt(0.7)             // '7'</pre>
+x.idiv(0.7)             // '7'</pre>
 
 
 
@@ -1204,22 +1202,6 @@ x.toString()                             // '7.5e+5'
 Decimal.config({ precision: 4 });
 y = new Decimal('1.23456789')
 y.toString()                             // '1.23456789'</pre>
-
-
-
-    <h5 id="trunc">truncated<code class='inset'>.trunc() <i>&rArr; Decimal</i></code></h5>
-    <p>
-      Returns a new Decimal whose value is the value of this Decimal truncated to a whole number.
-    </p>
-    <p>
-      The return value is not affected by the value of the
-      <a href='#precision'><code>precision</code></a> setting.
-    </p>
-    <pre>
-x = new Decimal(123.456)
-x.truncated()                            // '123'
-y = new Decimal(-12.3)
-y.trunc()                                // '-12'</pre>
 
 
 

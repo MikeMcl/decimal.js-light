@@ -76,7 +76,7 @@ T('immutability', function () {
     x = a.dividedToIntegerBy(b);
     t(a, aa);
     t(b, bb);
-    y = a.divToInt(b);
+    y = a.idiv(b);
     t(a, aa);
     t(b, bb);
     t(x, y);
@@ -258,12 +258,6 @@ T('immutability', function () {
 
     a.toString();
     t(a, aa);
-
-    x = a.truncated();
-    t(a, aa);
-    y = a.trunc();
-    t(a, aa);
-    t(x, y);
 
     a.valueOf();
     t(a, aa);

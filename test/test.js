@@ -12,7 +12,7 @@ console.log('\n Testing decimal.js-light\n');
   'config',
   'Decimal',
   'div',
-  'divToInt',
+  'idiv',
   'dpSd',
   'exp',
   'floor',
@@ -37,7 +37,6 @@ console.log('\n Testing decimal.js-light\n');
   'toPrecision',
   'toSD',
   'toString',
-  'trunc',
   'valueOf'
 ]
 .forEach(function (module) {

@@ -75,6 +75,7 @@ li span{float:right;margin-right:10px;color:#c0c0c0}
       <li><a href="#rounding" >rounding</a></li>
       <li><a href="#toExpNeg" >toExpNeg</a></li>
       <li><a href="#toExpPos" >toExpPos</a></li>
+      <li><a href="#ln10"     >LN10</a></li>
       <li class='spacer'>&nbsp;</li>
       <li><a href="#modes">ROUND_UP</a></li>
       <li><a href="#modes">ROUND_DOWN</a></li>
@@ -416,6 +417,28 @@ Decimal.config({ toExpPos: 0 })</pre>
       notation and the <a href='#toExponential'><code>toExponential</code></a> method will always
       return a value in exponential form.
     </p>
+
+    
+
+    <h5 id="ln10">LN10</h5>
+    <p>
+      <i>string</i>: the natural logarithm of <code>10</code><br />
+      The default value has <code>115</code> digits
+    </p>
+    <p>
+      The maximum precision of the <a href='#exp'><code>naturalExponential</code></a>,
+      <a href='#ln'><code>naturalLogarithm</code></a>, <a href='#log'><code>logarithm</code></a>, and
+      <a href='#pow'><code>toPower</code></a> methods is determined by the precision of the value of
+      <code>LN10</code>.
+    </p>
+    <p>
+      The default value of <code>115</code> digits enables these methods to have a working precision
+      of about <code>100</code> digits.
+    </p>
+    <pre>
+Decimal.config({ LN10: '2.302585092994045684017991454684364207601101488628772976033327900967572609677352480235997205089598298341967784042286' })
+
+Decimal.LN10.toFixed(5)             // ''2.30259'</pre>
 
 
 
@@ -775,17 +798,10 @@ y.ln()                                   // '69.28'</pre>
       argument is <code>1</code>.
     </p>
     <p>
-      Internally, this method is dependent on a constant whose value is the natural logarithm of
-      <code>10</code>. This <code>LN10</code> variable in the source code currently has a precision
-      of <code>415</code> digits, meaning that this method can accurately calculate up to a
-      precision of about <code>400</code> digits.
-    </p>
-    <p>
-      If more than <code>400</code> digits is required then the precision of <code>LN10</code>
-      will need to be increased to <code>15</code> digits more than is required.
-    </p>
-    <p>
       The time-taken by this method increases exponentially with increasing digits.
+    </p>
+    <p>
+      See <a href='#ln10'>LN10</a> to configure the maximum precision available.
     </p>
 
 

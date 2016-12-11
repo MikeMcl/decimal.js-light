@@ -1,10 +1,10 @@
 if (typeof T === 'undefined') require('../setup');
 
-T('round', function () {
+T('toInteger', function () {
 
   function t(expected, n, rm) {
     Decimal.rounding = rm;
-    T.assertEqual(expected, new Decimal(n).round().valueOf());
+    T.assertEqual(expected, new Decimal(n).toInteger().valueOf());
   }
 
   Decimal.config({

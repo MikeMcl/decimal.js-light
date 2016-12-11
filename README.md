@@ -15,7 +15,7 @@ Size of *decimal.js* minified: 32.1 KB.
 
 Other differences are that this library does not include `NaN`, `Infinity` or `-0` as legitimate values, or work with values in other bases. 
 
-Also, here, the `Decimal.round` property is just the default rounding mode for `round`, `toDecimalPlaces`, `toExponential`, `toFixed`, `toPrecision` and `toSignificantDigits`. It does not apply to arithmetic operations, which are simply truncated at the required precision.  
+Also, here, the `Decimal.round` property is just the default rounding mode for `toDecimalPlaces`, `toExponential`, `toFixed`, `toPrecision` and `toSignificantDigits`. It does not apply to arithmetic operations, which are simply truncated at the required precision.  
 
 Further, the `exp`, `ln`, `log`, and `pow` methods have a limited precision of around 400 digits (which can be increased by adding further digits to the value of `LN10` in the source code.)
 

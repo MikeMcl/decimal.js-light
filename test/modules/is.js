@@ -35,9 +35,9 @@ T('isInteger, isNegative, isZero', function () {
 
   n = new Decimal('-0.1');
 
-  t(n.isNeg());
+  t(n.isneg());
   t(!n.isZero());
-  t(!n.isInt());
+  t(!n.isint());
   t(!n.equals(0.1));
   t(!n.greaterThan(-0.1));
   t(n.greaterThanOrEqualTo(-1));
@@ -59,9 +59,9 @@ T('isInteger, isNegative, isZero', function () {
 
   n = new Decimal(-0);
 
-  t(!n.isNeg());
+  t(!n.isneg());
   t(n.isZero());
-  t(n.isInt());
+  t(n.isint());
   t(n.equals('0.000'));
   t(n.greaterThan(-1));
   t(!n.greaterThanOrEqualTo(0.1));
@@ -73,9 +73,9 @@ T('isInteger, isNegative, isZero', function () {
 
   n = new Decimal('-1.234e+2');
 
-  t(n.isNeg());
+  t(n.isneg());
   t(!n.isZero());
-  t(!n.isInt());
+  t(!n.isint());
   t(n.eq(-123.4));
   t(n.gte('-1.234e+3'));
   t(n.lt(-123.39999));

@@ -27,15 +27,15 @@ console.log('\n Testing decimal.js-light\n');
   'neg',
   'plus',
   'pow',
-  'round',
   'sqrt',
   'times',
-  'toDP',
+  'todp',
   'toExponential',
   'toFixed',
+  'toInteger',
   'toNumber',
   'toPrecision',
-  'toSD',
+  'tosd',
   'toString',
   'valueOf'
 ]

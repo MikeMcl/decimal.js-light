@@ -104,9 +104,9 @@ li span{float:right;margin-right:10px;color:#c0c0c0}
       <li><a href="#floor"        >floor                   </a>                     </li>
       <li><a href="#gt"           >greaterThan             </a><span>gt</span>      </li>
       <li><a href="#gte"          >greaterThanOrEqualTo    </a><span>gte</span>     </li>
-      <li><a href="#isInt"        >isInteger               </a><span>isInt</span>   </li>
-      <li><a href="#isNeg"        >isNegative              </a><span>isNeg</span>   </li>
-      <li><a href="#isPos"        >isPositive              </a><span>isPos</span>   </li>
+      <li><a href="#isint"        >isInteger               </a><span>isint</span>   </li>
+      <li><a href="#isneg"        >isNegative              </a><span>isneg</span>   </li>
+      <li><a href="#ispos"        >isPositive              </a><span>ispos</span>   </li>
       <li><a href="#isZero"       >isZero                  </a>                     </li>
       <li><a href="#lt"           >lessThan                </a><span>lt</span>      </li>
       <li><a href="#lte"          >lessThanOrEqualTo       </a><span>lte</span>     </li>
@@ -118,18 +118,17 @@ li span{float:right;margin-right:10px;color:#c0c0c0}
       <li><a href="#neg"          >negated                 </a><span>neg</span>     </li>
       <li><a href="#add"          >plus                    </a><span>add</span>     </li>
       <li><a href="#sd"           >precision               </a><span>sd</span>      </li>
-      <li><a href="#round"        >round                   </a>                     </li>
       <li><a href="#sqrt"         >squareRoot              </a><span>sqrt</span>    </li>
       <li><a href="#mul"          >times                   </a><span>mul</span>     </li>
-      <li><a href="#toDP"         >toDecimalPlaces         </a><span>toDP</span>    </li>
+      <li><a href="#todp"         >toDecimalPlaces         </a><span>todp</span>    </li>
       <li><a href="#toExponential">toExponential           </a>                     </li>
       <li><a href="#toFixed"      >toFixed                 </a>                     </li>
-      <li><a href="#toFraction"   >toFraction              </a>                     </li>
+      <li><a href="#toInteger"    >toInteger               </a><span>toint</span>   </li>
       <li><a href="#toJSON"       >toJSON                  </a>                     </li>
-      <li><a href="#toNumber"     >toNumber                </a>                     </li>
+      <li><a href="#toNumber"     >toNumber                </a><span>tonum</span>   </li>
       <li><a href="#pow"          >toPower                 </a><span>pow</span>     </li>
       <li><a href="#toPrecision"  >toPrecision             </a>                     </li>
-      <li><a href="#toSD"         >toSignificantDigits     </a><span>toSD</span>    </li>
+      <li><a href="#tosd"         >toSignificantDigits     </a><span>tosd</span>    </li>
       <li><a href="#toString"     >toString                </a>                     </li>
       <li><a href="#valueOf"      >valueOf                 </a>                     </li>
     </ul>
@@ -360,8 +359,8 @@ Decimal.precision = 0
       significant digits except <a href='#decimal'><code>Decimal</code></a>,
       <a href='#abs'><code>absoluteValue</code></a>,
       <a href='#ceil'><code>ceil</code></a>, <a href='#floor'><code>floor</code></a>,
-      <a href='#neg'><code>negated</code></a>, <a href='#round'><code>round</code></a>, and
-      <a href='#toDP'><code>toDecimalPlaces</code></a>.
+      <a href='#neg'><code>negated</code></a>, <a href='#round'><code>toInteger</code></a>, and
+      <a href='#todp'><code>toDecimalPlaces</code></a>.
     </p>
     <pre>Decimal.config({ precision: 5 })
 Decimal.precision                  // 5</pre>
@@ -374,12 +373,12 @@ Decimal.precision                  // 5</pre>
       Default value: <code>4</code> <a href="#modes">(<code>ROUND_HALF_UP</code>)</a>
     </p>
     <p>
-      The default rounding mode used by <a href='#round'><code>round</code></a>,
-      <a href='#toDP'><code>toDecimalPlaces</code></a>,
+      The default rounding mode used by <a href='#round'><code>toInteger</code></a>,
+      <a href='#todp'><code>toDecimalPlaces</code></a>,
       <a href='#toExponential'><code>toExponential</code></a>,
       <a href='#toFixed'><code>toFixed</code></a>,
       <a href='#toPrecision'><code>toPrecision</code></a> and
-      <a href='#toSD'><code>toSignificantDigits</code></a>.
+      <a href='#tosd'><code>toSignificantDigits</code></a>.
     </p>
     <p>
       The <a href='#modes'>rounding modes</a> are available as enumerated properties of the
@@ -671,7 +670,7 @@ new Decimal(1).gte(x)                    // true</pre>
 
 
 
-    <h5 id="isInt">isInteger<code class='inset'>.isInt() <i>&rArr; boolean</i></code></h5>
+    <h5 id="isint">isInteger<code class='inset'>.isint() <i>&rArr; boolean</i></code></h5>
     <p>
       Returns <code>true</code> if the value of this Decimal is a whole number, otherwise returns
       <code>false</code>.
@@ -680,11 +679,11 @@ new Decimal(1).gte(x)                    // true</pre>
 x = new Decimal(1)
 x.isInteger()                            // true
 y = new Decimal(123.456)
-y.isInt()                                // false</pre>
+y.isint()                                // false</pre>
 
 
 
-    <h5 id="isNeg">isNegative<code class='inset'>.isNeg() <i>&rArr; boolean</i></code></h5>
+    <h5 id="isneg">isNegative<code class='inset'>.isneg() <i>&rArr; boolean</i></code></h5>
     <p>
       Returns <code>true</code> if the value of this Decimal is negative, otherwise returns
       <code>false</code>.
@@ -693,12 +692,12 @@ y.isInt()                                // false</pre>
 x = new Decimal(-0)
 x.isNegative()                           // true
 y = new Decimal(2)
-y.isNeg                                  // false</pre>
+y.isneg                                  // false</pre>
     <p>Note: <code>n &lt; 0</code> can be used if <code>n &lt;= -Number.MIN_VALUE</code>.</p>
 
 
 
-     <h5 id="isPos">isPositive<code class='inset'>.isPos() <i>&rArr; boolean</i></code></h5>
+     <h5 id="ispos">isPositive<code class='inset'>.ispos() <i>&rArr; boolean</i></code></h5>
     <p>
       Returns <code>true</code> if the value of this Decimal is positive, otherwise returns
       <code>false</code>.
@@ -707,7 +706,7 @@ y.isNeg                                  // false</pre>
 x = new Decimal(0)
 x.isPositive()                           // true
 y = new Decimal(-2)
-y.isPos                                  // false</pre>
+y.ispos                                  // false</pre>
     <p>Note: <code>n &lt; 0</code> can be used if <code>n &lt;= -Number.MIN_VALUE</code>.</p>
 
 
@@ -900,26 +899,6 @@ y.sd(true)                               // '6'</pre>
 
 
 
-    <h5 id="round">round<code class='inset'>.round() <i>&rArr; Decimal</i></code></h5>
-    <p>
-      Returns a new Decimal whose value is the value of this Decimal rounded to a whole number using
-      rounding mode <a href='#rounding'><code>rounding</code></a>.
-    </p>
-    <p>
-      To emulate <code>Math.round</code>, set <a href='#rounding'><code>rounding</code></a> to
-      <code>7</code>, i.e. <a href='#modes'><code>ROUND_HALF_CEIL</code></a>.
-    </p>
-    <pre>
-Decimal.config({ rounding: 4 })
-x = 1234.5
-x.round()                                // '1235'
-
-Decimal.rounding = Decimal.ROUND_DOWN
-x.round()                                // '1234'
-x                                        // '1234.5'</pre>
-
-
-
     <h5 id="sqrt">squareRoot<code class='inset'>.sqrt() <i>&rArr; Decimal</i></code></h5>
     <p>
       Returns a new Decimal whose value is the square root of this Decimal, truncated to
@@ -952,8 +931,8 @@ new Decimal('7e+500').times(y)           // '1.26e+501'</pre>
 
 
 
-    <h5 id="toDP">
-      toDecimalPlaces<code class='inset'>.toDP([dp [, rm]]) <i>&rArr; Decimal</i></code>
+    <h5 id="todp">
+      toDecimalPlaces<code class='inset'>.todp([dp [, rm]]) <i>&rArr; Decimal</i></code>
     </h5>
     <p>
       <code>dp</code>: <i>number</i>: integer, <code>0</code> to <code>1e+9</code> inclusive<br />
@@ -977,9 +956,9 @@ x.toDecimalPlaces(0)                // '12'
 x.toDecimalPlaces(1, 0)             // '12.3'
 
 y = new Decimal(9876.54321)
-y.toDP(3)                           // '9876.543'
-y.toDP(1, 0)                        // '9876.6'
-y.toDP(1, Decimal.ROUND_DOWN)       // '9876.5'</pre>
+y.todp(3)                           // '9876.543'
+y.todp(1, 0)                        // '9876.6'
+y.todp(1, Decimal.ROUND_DOWN)       // '9876.5'</pre>
 
 
 
@@ -1070,7 +1049,27 @@ y.toFixed(5)             // '3.45600'</pre>
 
 
 
-    <h5 id="toJSON">toJSON<code class='inset'>.toJSON() <i>&rArr; string</i></code></h5>
+    <h5 id="toInteger">toInteger<code class='inset'>.toint() <i>&rArr; Decimal</i></code></h5>
+    <p>
+      Returns a new Decimal whose value is the value of this Decimal rounded to a whole number using
+      rounding mode <a href='#rounding'><code>rounding</code></a>.
+    </p>
+    <p>
+      To emulate <code>Math.round</code>, set <a href='#rounding'><code>rounding</code></a> to
+      <code>7</code>, i.e. <a href='#modes'><code>ROUND_HALF_CEIL</code></a>.
+    </p>
+    <pre>
+Decimal.config({ rounding: 4 })
+x = 1234.5
+x.toInteger()                            // '1235'
+
+Decimal.rounding = Decimal.ROUND_DOWN
+x.toint()                                // '1234'
+x                                        // '1234.5'</pre>
+
+
+
+<h5 id="toJSON">toJSON<code class='inset'>.toJSON() <i>&rArr; string</i></code></h5>
     <p>As <a href='#toString'><code>toString</code></a>.</p>
 
 
@@ -1153,8 +1152,8 @@ y.toPrecision(5)                         // '45.600'</pre>
 
 
 
-    <h5 id="toSD">
-      toSignificantDigits<code class='inset'>.toSD([sd [, rm]]) <i>&rArr; Decimal</i></code>
+    <h5 id="tosd">
+      toSignificantDigits<code class='inset'>.tosd([sd [, rm]]) <i>&rArr; Decimal</i></code>
     </h5>
     <p>
       <code>sd</code>: <i>number</i>: integer, <code>1</code> to <code>1e+9</code> inclusive.<br />
@@ -1180,8 +1179,8 @@ x = new Decimal(9876.54321)
 x.toSignificantDigits()                          // '9876.5'
 x.toSignificantDigits(6)                         // '9876.54'
 x.toSignificantDigits(6, Decimal.ROUND_UP)       // '9876.55'
-x.toSD(2)                                        // '9900'
-x.toSD(2, 1)                                     // '9800'
+x.tosd(2)                                        // '9900'
+x.tosd(2, 1)                                     // '9800'
 x                                                // '9876.54321'</pre>
 
 

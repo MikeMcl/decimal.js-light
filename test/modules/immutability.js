@@ -110,19 +110,19 @@ T('immutability', function () {
 
     x = a.isInteger();
     t(a, aa);
-    y = a.isInt();
+    y = a.isint();
     t(a, aa);
     T.assertEqual(x, y);
 
     x = a.isNegative();
     t(a, aa);
-    y = a.isNeg();
+    y = a.isneg();
     t(a, aa);
     T.assertEqual(x, y);
 
     x = a.isPositive();
     t(a, aa);
-    y = a.isPos();
+    y = a.ispos();
     t(a, aa);
     T.assertEqual(x, y);
 
@@ -203,7 +203,7 @@ T('immutability', function () {
     t(a, aa);
     T.assertEqual(x, y);
 
-    x = a.round();
+    x = a.toInteger();
     t(a, aa);
 
     /*

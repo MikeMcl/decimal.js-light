@@ -30,7 +30,7 @@
       // E.g. `Decimal.config({ precision: 20 });`
       precision: 20,                         // 1 to MAX_DIGITS
 
-      // The rounding mode used by default by `round`, `toDecimalPlaces`, `toExponential`,
+      // The rounding mode used by default by `toInteger`, `toDecimalPlaces`, `toExponential`,
       // `toFixed`, `toPrecision` and `toSignificantDigits`.
       //
       // ROUND_UP         0 Away from zero.
@@ -92,40 +92,40 @@
 
 
   /*
-   *  absoluteValue             abs
+   *  absoluteValue                       abs
    *  ceil
-   *  comparedTo                cmp
-   *  decimalPlaces             dp
-   *  dividedBy                 div
-   *  dividedToIntegerBy        idiv
-   *  equals                    eq
+   *  comparedTo                          cmp
+   *  decimalPlaces                       dp
+   *  dividedBy                           div
+   *  dividedToIntegerBy                  idiv
+   *  equals                              eq
    *  floor
-   *  greaterThan               gt
-   *  greaterThanOrEqualTo      gte
-   *  isInteger                 isInt
-   *  isNegative                isNeg
-   *  isPositive                isPos
+   *  greaterThan                         gt
+   *  greaterThanOrEqualTo                gte
+   *  isInteger                           isint
+   *  isNegative                          isneg
+   *  isPositive                          ispos
    *  isZero
-   *  lessThan                  lt
-   *  lessThanOrEqualTo         lte
-   *  logarithm                 log
-   *  minus                     sub
-   *  modulo                    mod
-   *  naturalExponential        exp
-   *  naturalLogarithm          ln
-   *  negated                   neg
-   *  plus                      add
-   *  precision                 sd
-   *  round
-   *  squareRoot                sqrt
-   *  times                     mul
-   *  toDecimalPlaces           toDP
+   *  lessThan                            lt
+   *  lessThanOrEqualTo                   lte
+   *  logarithm                           log
+   *  minus                               sub
+   *  modulo                              mod
+   *  naturalExponential                  exp
+   *  naturalLogarithm                    ln
+   *  negated                             neg
+   *  plus                                add
+   *  precision                           sd
+   *  squareRoot                          sqrt
+   *  times                               mul
+   *  toDecimalPlaces                     todp
    *  toExponential
    *  toFixed
-   *  toNumber
-   *  toPower                   pow
+   *  toInteger                           toint
+   *  toNumber                            tonum
+   *  toPower                             pow
    *  toPrecision
-   *  toSignificantDigits       toSD
+   *  toSignificantDigits                 tosd
    *  toString
    *  valueOf
    */
@@ -266,7 +266,7 @@
    * Return true if the value of this Decimal is an integer, otherwise return false.
    *
    */
-  P.isInteger = P.isInt = function () {
+  P.isInteger = P.isint = function () {
     return this.e > this.d.length - 2;
   };
 
@@ -275,7 +275,7 @@
    * Return true if the value of this Decimal is negative, otherwise return false.
    *
    */
-  P.isNegative = P.isNeg = function () {
+  P.isNegative = P.isneg = function () {
     return this.s < 0;
   };
 
@@ -284,7 +284,7 @@
    * Return true if the value of this Decimal is positive, otherwise return false.
    *
    */
-  P.isPositive = P.isPos = function () {
+  P.isPositive = P.ispos = function () {
     return this.s > 0;
   };
 
@@ -480,18 +480,6 @@
 
 
   /*
-   * Return a new Decimal whose value is the value of this Decimal rounded to a whole number using
-   * rounding mode `rounding`.
-   *
-   */
-  P.round = function () {
-    var x = this,
-      Ctor = x.constructor;
-    return round(new Ctor(x), getBase10Exponent(x) + 1, Ctor.rounding);
-  };
-
-
-  /*
    * Return a new Decimal whose value is the square root of this Decimal, truncated to `precision`
    * significant digits.
    *
@@ -645,7 +633,7 @@
    * [rm] {number} Rounding mode. Integer, 0 to 8 inclusive.
    *
    */
-  P.toDecimalPlaces = P.toDP = function (dp, rm) {
+  P.toDecimalPlaces = P.todp = function (dp, rm) {
     var x = this,
       Ctor = x.constructor;
 
@@ -723,7 +711,19 @@
 
     // To determine whether to add the minus sign look at the value before it was rounded,
     // i.e. look at `x` rather than `y`.
-    return x.isNeg() && !x.isZero() ? '-' + str : str;
+    return x.isneg() && !x.isZero() ? '-' + str : str;
+  };
+
+
+  /*
+   * Return a new Decimal whose value is the value of this Decimal rounded to a whole number using
+   * rounding mode `rounding`.
+   *
+   */
+  P.toInteger = P.toint = function () {
+    var x = this,
+      Ctor = x.constructor;
+    return round(new Ctor(x), getBase10Exponent(x) + 1, Ctor.rounding);
   };
 
 
@@ -871,7 +871,7 @@
    * [rm] {number} Rounding mode. Integer, 0 to 8 inclusive.
    *
    */
-  P.toSignificantDigits = P.toSD = function (sd, rm) {
+  P.toSignificantDigits = P.tosd = function (sd, rm) {
     var x = this,
       Ctor = x.constructor;
 
@@ -910,11 +910,11 @@
 
   /*
    *  add                 P.minus, P.plus
-   *  checkInt32          P.toDP, P.toExponential, P.toFixed, P.toPrecision, P.toSD
+   *  checkInt32          P.todp, P.toExponential, P.toFixed, P.toPrecision, P.tosd
    *  digitsToString      P.log, P.sqrt, P.pow, toString, exp, ln
    *  divide              P.div, P.idiv, P.log, P.mod, P.sqrt, exp, ln
    *  exp                 P.exp, P.pow
-   *  getBase10Exponent   P.ceil, P.floor, P.sd, P.round, P.sqrt, P.toDP, P.toFixed, P.toPrecision,
+   *  getBase10Exponent   P.ceil, P.floor, P.sd, P.toint, P.sqrt, P.todp, P.toFixed, P.toPrecision,
    *                      P.toString, divide, round, toString, exp, ln
    *  getLn10             P.log, ln
    *  getZeroString       digitsToString, toString
@@ -922,8 +922,8 @@
    *  maxOrMin            max, min
    *  parseDecimal        Decimal
    *  round               P.abs, P.ceil, P.idiv, P.floor, P.log, P.minus, P.mod, P.neg, P.plus,
-   *                      P.round, P.sqrt, P.times, P.toDP, P.toExponential, P.toFixed, P.pow,
-   *                      P.toPrecision, P.toSD, divide, getLn10, exp, ln
+   *                      P.toint, P.sqrt, P.times, P.todp, P.toExponential, P.toFixed, P.pow,
+   *                      P.toPrecision, P.tosd, divide, getLn10, exp, ln
    *  subtract            P.minus, P.plus
    *  toString            P.toExponential, P.toFixed, P.toPrecision, P.toString, P.valueOf
    *  truncate            P.pow

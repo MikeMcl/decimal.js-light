@@ -94,8 +94,8 @@ T('clone', function () {
 
   t(new Decimal(9.99).eq(new D5('9.99')));
   t(!new Decimal(9.99).eq(new D3('-9.99')));
-  t(!new Decimal(123.456789).toSD().eq(new D3('123.456789').toSD()));
-  t(new Decimal(123.456789).round().eq(new D3('123.456789').round()));
+  t(!new Decimal(123.456789).tosd().eq(new D3('123.456789').tosd()));
+  t(new Decimal(123.456789).toInteger().eq(new D3('123.456789').toInteger()));
 
   t(new Decimal(1).constructor === new Decimal(1).constructor);
   t(new D9(1).constructor === new D9(1).constructor);

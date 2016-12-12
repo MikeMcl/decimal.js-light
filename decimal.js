@@ -1,10 +1,10 @@
-/*! decimal.js-light v1.0.4 https://github.com/MikeMcl/decimal.js-light/LICENCE */
+/*! decimal.js-light v2.0.0 https://github.com/MikeMcl/decimal.js-light/LICENCE */
 ;(function (globalScope) {
   'use strict';
 
 
   /*
-   *  decimal.js-light v1.0.4
+   *  decimal.js-light v2.0.0
    *  An arbitrary-precision Decimal type for JavaScript.
    *  https://github.com/MikeMcl/decimal.js-light
    *  Copyright (c) 2016 Michael Mclaughlin <M8ch88l@gmail.com>
@@ -123,7 +123,7 @@
    *  toPrecision
    *  toSignificantDigits                 tosd
    *  toString
-   *  valueOf
+   *  valueOf                             val
    */
 
 
@@ -872,7 +872,7 @@
    * `toExpPos`, or a negative exponent equal to or less than `toExpNeg`.
    *
    */
-  P.toString = P.valueOf = P.toJSON = function () {
+  P.toString = P.valueOf = P.val = P.toJSON = function () {
     var x = this,
       e = getBase10Exponent(x),
       Ctor = x.constructor;
@@ -1823,7 +1823,7 @@
 
   /*
    *  clone
-   *  config
+   *  config/set
    */
 
 

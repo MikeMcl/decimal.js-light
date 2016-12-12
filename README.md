@@ -6,7 +6,7 @@ The light version of [decimal.js](https://github.com/MikeMcl/decimal.js/), an ar
 [![Build Status](https://travis-ci.org/MikeMcl/decimal.js-light.svg)](https://travis-ci.org/MikeMcl/decimal.js-light)  
 <br />
 
-The API is a subset of the API of *decimal.js*. 
+The API is more or less a subset of the API of *decimal.js*. 
 
 ![API](https://raw.githubusercontent.com/MikeMcl/decimal.js-light/gh-pages/API.png)
 
@@ -17,21 +17,7 @@ Other differences are that this library does not include `NaN`, `Infinity` or `-
 
 Also, here, the `Decimal.round` property is just the default rounding mode for `toDecimalPlaces`, `toExponential`, `toFixed`, `toPrecision` and `toSignificantDigits`. It does not apply to arithmetic operations, which are simply truncated at the required precision.
 
-
-```js
-x = new Decimal(2);
-y = new Decimal(3);
-
-// decimal.js
-x.dividedBy(y).toString();                       // '0.66666666666666666667'
-
-// decimal.js-light
-x.dividedBy(y).toString();                       // '0.66666666666666666666'
-
-x.dividedBy(y).toDecimalPlaces(19).toString();   // '0.6666666666666666667'
-```
-
-Another difference is that here the `exp`, `ln`, `log`, and `pow` methods have by default a limited precision of around 100 digits. This limit can be increased by changing the value of `LN10` (the natural logarithm of ten) in the source code, or at runtime as shown below.
+Another difference is that here the `naturalExponential`, `naturalLogarithm`, `logarithm`, and `toPower` methods have by default a limited precision of around 100 digits. This limit can be increased by changing the value of `LN10` (the natural logarithm of ten) in the source code, or at runtime as shown below.
 
 ```js
 // 415 digits
@@ -50,6 +36,17 @@ Decimal.set({
   toExpNeg: -7,
   toExpPos: 21
 });
+
+x = new Decimal(2);
+y = new Decimal(3);
+
+// decimal.js
+x.dividedBy(y).toString();                       // '0.66666666666666666667'
+
+// decimal.js-light
+x.dividedBy(y).toString();                       // '0.66666666666666666666'
+
+x.dividedBy(y).toDecimalPlaces(19).toString();   // '0.6666666666666666667'
 
 phi = new Decimal('1.61803398874989484820458683436563811772030917980576');
 

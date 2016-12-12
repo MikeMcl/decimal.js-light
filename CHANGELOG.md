@@ -1,3 +1,7 @@
+#### 2.0.2
+12/12/2016
+* npm publish
+
 #### 2.0.1
 12/12/2016
 * Filename-casing issue

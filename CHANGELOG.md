@@ -1,3 +1,7 @@
+#### 2.0.1
+12/12/2016
+* Filename-casing issue
+
 #### 2.0.0
 11/12/2016
 * Make `LN10` configurable at runtime

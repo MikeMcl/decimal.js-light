@@ -65,10 +65,8 @@ li span{float:right;margin-right:10px;color:#c0c0c0}
 
     <a href="#methods">Methods</a>
     <ul>
-      <li><a href="#Dclone"     >clone</a></li>
-      <li><a href="#Dconfig"    >config</a></li>
-      <li><a href="#Dmax"       >max</a></li>
-      <li><a href="#Dmin"       >min</a></li>
+      <li><a href="#Dclone" >clone</a></li>
+      <li><a href="#Dconfig">config</a></li>
     </ul>
 
     <a href="#constructor-properties">Properties</a>
@@ -77,6 +75,7 @@ li span{float:right;margin-right:10px;color:#c0c0c0}
       <li><a href="#rounding" >rounding</a></li>
       <li><a href="#toExpNeg" >toExpNeg</a></li>
       <li><a href="#toExpPos" >toExpPos</a></li>
+      <li><a href="#ln10"     >LN10</a></li>
       <li class='spacer'>&nbsp;</li>
       <li><a href="#modes">ROUND_UP</a></li>
       <li><a href="#modes">ROUND_DOWN</a></li>
@@ -94,45 +93,41 @@ li span{float:right;margin-right:10px;color:#c0c0c0}
 
     <a href="#prototype-methods">Methods</a>
     <ul>
-      <li><a href="#abs"          >absoluteValue           </a><span>abs</span>     </li>
-      <li><a href="#ceil"         >ceil                    </a>                     </li>
-      <li><a href="#cmp"          >comparedTo              </a><span>cmp</span>     </li>
-      <li><a href="#dp"           >decimalPlaces           </a><span>dp</span>      </li>
-      <li><a href="#div"          >dividedBy               </a><span>div</span>     </li>
-      <li><a href="#divToInt"     >dividedToIntegerBy      </a><span>divToInt</span></li>
-      <li><a href="#eq"           >equals                  </a><span>eq</span>      </li>
-      <li><a href="#floor"        >floor                   </a>                     </li>
-      <li><a href="#gt"           >greaterThan             </a><span>gt</span>      </li>
-      <li><a href="#gte"          >greaterThanOrEqualTo    </a><span>gte</span>     </li>
-      <li><a href="#isInt"        >isInteger               </a><span>isInt</span>   </li>
-      <li><a href="#isNeg"        >isNegative              </a><span>isNeg</span>   </li>
-      <li><a href="#isPos"        >isPositive              </a><span>isPos</span>   </li>
-      <li><a href="#isZero"       >isZero                  </a>                     </li>
-      <li><a href="#lt"           >lessThan                </a><span>lt</span>      </li>
-      <li><a href="#lte"          >lessThanOrEqualTo       </a><span>lte</span>     </li>
-      <li><a href="#log"          >logarithm               </a><span>log</span>     </li>
-      <li><a href="#sub"          >minus                   </a><span>sub</span>     </li>
-      <li><a href="#mod"          >modulo                  </a><span>mod</span>     </li>
-      <li><a href="#exp"          >naturalExponential      </a><span>exp</span>     </li>
-      <li><a href="#ln"           >naturalLogarithm        </a><span>ln</span>      </li>
-      <li><a href="#neg"          >negated                 </a><span>neg</span>     </li>
-      <li><a href="#add"          >plus                    </a><span>add</span>     </li>
-      <li><a href="#sd"           >precision               </a><span>sd</span>      </li>
-      <li><a href="#round"        >round                   </a>                     </li>
-      <li><a href="#sqrt"         >squareRoot              </a><span>sqrt</span>    </li>
-      <li><a href="#mul"          >times                   </a><span>mul</span>     </li>
-      <li><a href="#toDP"         >toDecimalPlaces         </a><span>toDP</span>    </li>
-      <li><a href="#toExponential">toExponential           </a>                     </li>
-      <li><a href="#toFixed"      >toFixed                 </a>                     </li>
-      <li><a href="#toFraction"   >toFraction              </a>                     </li>
-      <li><a href="#toJSON"       >toJSON                  </a>                     </li>
-      <li><a href="#toNumber"     >toNumber                </a>                     </li>
-      <li><a href="#pow"          >toPower                 </a><span>pow</span>     </li>
-      <li><a href="#toPrecision"  >toPrecision             </a>                     </li>
-      <li><a href="#toSD"         >toSignificantDigits     </a><span>toSD</span>    </li>
-      <li><a href="#toString"     >toString                </a>                     </li>
-      <li><a href="#trunc"        >truncated               </a><span>trunc</span>   </li>
-      <li><a href="#valueOf"      >valueOf                 </a>                     </li>
+      <li><a href="#abs"          >absoluteValue           </a><span>abs</span>  </li>
+      <li><a href="#cmp"          >comparedTo              </a><span>cmp</span>  </li>
+      <li><a href="#dp"           >decimalPlaces           </a><span>dp</span>   </li>
+      <li><a href="#div"          >dividedBy               </a><span>div</span>  </li>
+      <li><a href="#idiv"         >dividedToIntegerBy      </a><span>idiv</span> </li>
+      <li><a href="#eq"           >equals                  </a><span>eq</span>   </li>
+      <li><a href="#gt"           >greaterThan             </a><span>gt</span>   </li>
+      <li><a href="#gte"          >greaterThanOrEqualTo    </a><span>gte</span>  </li>
+      <li><a href="#isint"        >isInteger               </a><span>isint</span></li>
+      <li><a href="#isneg"        >isNegative              </a><span>isneg</span></li>
+      <li><a href="#ispos"        >isPositive              </a><span>ispos</span></li>
+      <li><a href="#isZero"       >isZero                  </a>                  </li>
+      <li><a href="#lt"           >lessThan                </a><span>lt</span>   </li>
+      <li><a href="#lte"          >lessThanOrEqualTo       </a><span>lte</span>  </li>
+      <li><a href="#log"          >logarithm               </a><span>log</span>  </li>
+      <li><a href="#sub"          >minus                   </a><span>sub</span>  </li>
+      <li><a href="#mod"          >modulo                  </a><span>mod</span>  </li>
+      <li><a href="#exp"          >naturalExponential      </a><span>exp</span>  </li>
+      <li><a href="#ln"           >naturalLogarithm        </a><span>ln</span>   </li>
+      <li><a href="#neg"          >negated                 </a><span>neg</span>  </li>
+      <li><a href="#add"          >plus                    </a><span>add</span>  </li>
+      <li><a href="#sd"           >precision               </a><span>sd</span>   </li>
+      <li><a href="#sqrt"         >squareRoot              </a><span>sqrt</span> </li>
+      <li><a href="#mul"          >times                   </a><span>mul</span>  </li>
+      <li><a href="#todp"         >toDecimalPlaces         </a><span>todp</span> </li>
+      <li><a href="#toExponential">toExponential           </a>                  </li>
+      <li><a href="#toFixed"      >toFixed                 </a>                  </li>
+      <li><a href="#toInteger"    >toInteger               </a><span>toint</span></li>
+      <li><a href="#toJSON"       >toJSON                  </a>                  </li>
+      <li><a href="#toNumber"     >toNumber                </a><span>tonum</span></li>
+      <li><a href="#pow"          >toPower                 </a><span>pow</span>  </li>
+      <li><a href="#toPrecision"  >toPrecision             </a>                  </li>
+      <li><a href="#tosd"         >toSignificantDigits     </a><span>tosd</span> </li>
+      <li><a href="#toString"     >toString                </a>                  </li>
+      <li><a href="#valueOf"      >valueOf                 </a><span>val</span>  </li>
     </ul>
 
     <a href="#instance-properties">Properties</a>
@@ -165,8 +160,8 @@ li span{float:right;margin-right:10px;color:#c0c0c0}
     <h2>API</h2>
 
     <p>
-      See the <a href='https://github.com/MikeMcl/decimal.js'>README</a> on GitHub for a
-      quick-start introduction.
+      See the <a href='https://github.com/MikeMcl/decimal.js'>README</a> on GitHub for a quick-start
+      introduction.
     </p>
     <p>
       In all examples below, <code>var</code> and semicolons are not shown, and if a commented-out
@@ -272,7 +267,7 @@ D9.config({ precision: 9 })</pre>
 
 
     <h5 id="Dconfig">
-      config<code class='inset'>.config(object) <i>&rArr; Decimal constructor</i></code>
+      config<code class='inset'>.set(object) <i>&rArr; Decimal constructor</i></code>
     </h5>
     <p><code>object</code>: <i>object</i></p>
     <p>
@@ -296,37 +291,17 @@ Decimal.config({
     precision: 20,
     rounding: 4,
     toExpNeg: -7,
-    toExpPos: 21
-})</pre>
+    toExpPos: 21,
+    LN10: new Decimal('2.30258509299404568401799145468436...')
+})
+
+Decimal.set({ rounding: Decimal.ROUND_CEIL })
+</pre>
     <p>
       The properties of a Decimal constructor can also be set by direct assignment, but that will
       by-pass the validity checking that this method performs - which is not a problem if the user
       knows that the checks are unnecessary.
     </p>
-
-
-
-    <h5 id="Dmax">
-      max<code class='inset'>.max([x [, y, ...]]) <i>&rArr; Decimal</i></code>
-    </h5>
-    <p>
-      <code>x</code>: <i>number|string|Decimal</i><br />
-      <code>y</code>: <i>number|string|Decimal</i>
-    </p>
-    <p>Returns a new Decimal whose value is the maximum of the <code>arguments</code>.</p>
-    <pre>r = Decimal.max(x, y, z)</pre>
-
-
-
-    <h5 id="Dmin">
-      min<code class='inset'>.min([x [, y, ...]]) <i>&rArr; Decimal</i></code>
-    </h5>
-    <p>
-      <code>x</code>: <i>number|string|Decimal</i><br />
-      <code>y</code>: <i>number|string|Decimal</i>
-    </p>
-    <p>Returns a new Decimal whose value is the minimum of the <code>arguments</code>.</p>
-    <pre>r = Decimal.min(x, y, z)</pre>
 
 
 
@@ -365,10 +340,8 @@ Decimal.precision = 0
       All functions which return a Decimal will return the value to <code>precision</code>
       significant digits except <a href='#decimal'><code>Decimal</code></a>,
       <a href='#abs'><code>absoluteValue</code></a>,
-      <a href='#ceil'><code>ceil</code></a>, <a href='#floor'><code>floor</code></a>,
-      <a href='#neg'><code>negated</code></a>, <a href='#round'><code>round</code></a>,
-      <a href='#toDP'><code>toDecimalPlaces</code></a> and
-      <a href='#trunc'><code>truncated</code></a>.
+      <a href='#neg'><code>negated</code></a>, <a href='#round'><code>toInteger</code></a>, and
+      <a href='#todp'><code>toDecimalPlaces</code></a>.
     </p>
     <pre>Decimal.config({ precision: 5 })
 Decimal.precision                  // 5</pre>
@@ -381,12 +354,12 @@ Decimal.precision                  // 5</pre>
       Default value: <code>4</code> <a href="#modes">(<code>ROUND_HALF_UP</code>)</a>
     </p>
     <p>
-      The default rounding mode used by <a href='#round'><code>round</code></a>,
-      <a href='#toDP'><code>toDecimalPlaces</code></a>,
+      The default rounding mode used by <a href='#round'><code>toInteger</code></a>,
+      <a href='#todp'><code>toDecimalPlaces</code></a>,
       <a href='#toExponential'><code>toExponential</code></a>,
       <a href='#toFixed'><code>toFixed</code></a>,
       <a href='#toPrecision'><code>toPrecision</code></a> and
-      <a href='#toSD'><code>toSignificantDigits</code></a>.
+      <a href='#tosd'><code>toSignificantDigits</code></a>.
     </p>
     <p>
       The <a href='#modes'>rounding modes</a> are available as enumerated properties of the
@@ -456,6 +429,33 @@ Decimal.config({ toExpPos: 0 })</pre>
 
 
 
+    <h5 id="ln10">LN10</h5>
+    <p>
+      <i>string|Decimal</i>: the natural logarithm of <code>10</code><br />
+      The default value has <code>115</code> digits
+    </p>
+    <p>
+      The maximum precision of the <a href='#exp'><code>naturalExponential</code></a>,
+      <a href='#ln'><code>naturalLogarithm</code></a>, <a href='#log'><code>logarithm</code></a>,
+      and <a href='#pow'><code>toPower</code></a> methods is determined by the precision of the
+      value of <code>LN10</code>.
+    </p>
+    <p>
+      To extent this precision, assign a string or Decimal value with about 15 digits more than the
+      maximum precision required. The default value enables a working precision of about
+      <code>100</code> digits.
+    </p>
+    <p>
+      An error will be thrown if the <code>LN10</code> value does not have sufficient precision to
+      enable an operation to be performed.
+    </p>
+    <pre>
+Decimal.config({ LN10: '2.3025850929940456840179914546843642076011014886287729760333279009' })
+
+Decimal.LN10.toFixed(5)             // ''2.30259'</pre>
+
+
+
     <h6 id="modes">Rounding modes</h6>
     <p>
       The library's enumerated rounding modes are stored as properties of the Decimal constructor.
@@ -504,7 +504,7 @@ Decimal.rounding                   // 2</pre>
     <p>The methods inherited by a Decimal instance from its constructor's prototype object.</p>
     <p>A Decimal instance is immutable in the sense that it is not changed by its methods.</p>
     <p>Methods that return a Decimal can be chained:</p>
-    <pre>x = new Decimal(2).times('999.999999999999999').dividedBy(4).ceil()</pre>
+    <pre>x = new Decimal(2).times('999.999999999999999').dividedBy(4).toFixed(2)</pre>
     <p>Methods do not round their arguments before execution.</p>
     <p>
       Many method names have a shorter alias. (Internally, the library always uses the shorter
@@ -526,23 +526,6 @@ Decimal.rounding                   // 2</pre>
 x = new Decimal(-0.8)
 y = x.absoluteValue()         // '0.8'
 z = y.abs()                   // '0.8'</pre>
-
-
-
-    <h5 id="ceil">ceil<code class='inset'>.ceil() <i>&rArr; Decimal</i></code></h5>
-    <p>
-      Returns a new Decimal whose value is the value of this Decimal rounded to a whole number in
-      the direction of positive <code>Infinity</code>.
-    </p>
-    <p>
-      The return value is not affected by the value of the
-      <a href='#precision'><code>precision</code></a> setting.
-    </p>
-    <pre>
-x = new Decimal(1.3)
-x.ceil()                      // '2'
-y = new Decimal(-1.8)
-y.ceil()                      // '-1'</pre>
 
 
 
@@ -598,8 +581,8 @@ x.div(5)                   // '71'</pre>
 
 
 
-    <h5 id="divToInt">
-      dividedToIntegerBy<code class='inset'>.divToInt(x) <i>&rArr; Decimal</i></code>
+    <h5 id="idiv">
+      dividedToIntegerBy<code class='inset'>.idiv(x) <i>&rArr; Decimal</i></code>
     </h5>
     <p><code>x</code>: <i>number|string|Decimal</i></p>
     <p>
@@ -611,7 +594,7 @@ x.div(5)                   // '71'</pre>
 x = new Decimal(5)
 y = new Decimal(3)
 x.dividedToIntegerBy(y)     // '1'
-x.divToInt(0.7)             // '7'</pre>
+x.idiv(0.7)             // '7'</pre>
 
 
 
@@ -626,23 +609,6 @@ x.divToInt(0.7)             // '7'</pre>
 0 === 1e-324                     // true
 x = new Decimal(0)
 x.equals('1e-324')               // false</pre>
-
-
-
-    <h5 id="floor">floor<code class='inset'>.floor() <i>&rArr; Decimal</i></code></h5>
-    <p>
-      Returns a new Decimal whose value is the value of this Decimal rounded to a whole number in
-      the direction of negative <code>Infinity</code>.
-    </p>
-    <p>
-      The return value is not affected by the value of the
-      <a href='#precision'><code>precision</code></a> setting.
-    </p>
-    <pre>
-x = new Decimal(1.8)
-x.floor()                   // '1'
-y = new Decimal(-1.3)
-y.floor()                   // '-2'</pre>
 
 
 
@@ -678,7 +644,7 @@ new Decimal(1).gte(x)                    // true</pre>
 
 
 
-    <h5 id="isInt">isInteger<code class='inset'>.isInt() <i>&rArr; boolean</i></code></h5>
+    <h5 id="isint">isInteger<code class='inset'>.isint() <i>&rArr; boolean</i></code></h5>
     <p>
       Returns <code>true</code> if the value of this Decimal is a whole number, otherwise returns
       <code>false</code>.
@@ -687,11 +653,11 @@ new Decimal(1).gte(x)                    // true</pre>
 x = new Decimal(1)
 x.isInteger()                            // true
 y = new Decimal(123.456)
-y.isInt()                                // false</pre>
+y.isint()                                // false</pre>
 
 
 
-    <h5 id="isNeg">isNegative<code class='inset'>.isNeg() <i>&rArr; boolean</i></code></h5>
+    <h5 id="isneg">isNegative<code class='inset'>.isneg() <i>&rArr; boolean</i></code></h5>
     <p>
       Returns <code>true</code> if the value of this Decimal is negative, otherwise returns
       <code>false</code>.
@@ -700,12 +666,12 @@ y.isInt()                                // false</pre>
 x = new Decimal(-0)
 x.isNegative()                           // true
 y = new Decimal(2)
-y.isNeg                                  // false</pre>
+y.isneg                                  // false</pre>
     <p>Note: <code>n &lt; 0</code> can be used if <code>n &lt;= -Number.MIN_VALUE</code>.</p>
 
 
 
-     <h5 id="isPos">isPositive<code class='inset'>.isPos() <i>&rArr; boolean</i></code></h5>
+     <h5 id="ispos">isPositive<code class='inset'>.ispos() <i>&rArr; boolean</i></code></h5>
     <p>
       Returns <code>true</code> if the value of this Decimal is positive, otherwise returns
       <code>false</code>.
@@ -714,7 +680,7 @@ y.isNeg                                  // false</pre>
 x = new Decimal(0)
 x.isPositive()                           // true
 y = new Decimal(-2)
-y.isPos                                  // false</pre>
+y.ispos                                  // false</pre>
     <p>Note: <code>n &lt; 0</code> can be used if <code>n &lt;= -Number.MIN_VALUE</code>.</p>
 
 
@@ -845,18 +811,11 @@ y.ln()                                   // '69.28'</pre>
       The mathematical result of the natural logarithm function is non-terminating, unless its
       argument is <code>1</code>.
     </p>
-   <p>
-      Internally, this method is dependent on a constant whose value is the natural logarithm of
-      <code>10</code>. This <code>LN10</code> variable in the source code currently has a precision
-      of <code>415</code> digits, meaning that this method can accurately calculate up to a
-      precision of about <code>400</code> digits.
-    </p>
-    <p>
-      If more than <code>400</code> digits is required then the precision of <code>LN10</code>
-      will need to be increased to <code>15</code> digits more than is required.
-    </p>
     <p>
       The time-taken by this method increases exponentially with increasing digits.
+    </p>
+    <p>
+      See <a href='#ln10'>LN10</a> to configure the maximum precision available.
     </p>
 
 
@@ -907,26 +866,6 @@ y.sd(true)                               // '6'</pre>
 
 
 
-    <h5 id="round">round<code class='inset'>.round() <i>&rArr; Decimal</i></code></h5>
-    <p>
-      Returns a new Decimal whose value is the value of this Decimal rounded to a whole number using
-      rounding mode <a href='#rounding'><code>rounding</code></a>.
-    </p>
-    <p>
-      To emulate <code>Math.round</code>, set <a href='#rounding'><code>rounding</code></a> to
-      <code>7</code>, i.e. <a href='#modes'><code>ROUND_HALF_CEIL</code></a>.
-    </p>
-    <pre>
-Decimal.config({ rounding: 4 })
-x = 1234.5
-x.round()                                // '1235'
-
-Decimal.rounding = Decimal.ROUND_DOWN
-x.round()                                // '1234'
-x                                        // '1234.5'</pre>
-
-
-
     <h5 id="sqrt">squareRoot<code class='inset'>.sqrt() <i>&rArr; Decimal</i></code></h5>
     <p>
       Returns a new Decimal whose value is the square root of this Decimal, truncated to
@@ -959,16 +898,16 @@ new Decimal('7e+500').times(y)           // '1.26e+501'</pre>
 
 
 
-    <h5 id="toDP">
-      toDecimalPlaces<code class='inset'>.toDP([dp [, rm]]) <i>&rArr; Decimal</i></code>
+    <h5 id="todp">
+      toDecimalPlaces<code class='inset'>.todp([dp [, rm]]) <i>&rArr; Decimal</i></code>
     </h5>
     <p>
       <code>dp</code>: <i>number</i>: integer, <code>0</code> to <code>1e+9</code> inclusive<br />
       <code>rm</code>: <i>number</i>: integer, <code>0</code> to <code>8</code> inclusive.
     </p>
     <p>
-      Returns a new Decimal whose value is the value of this Decimal rounded to <code>dp</code>
-      decimal places using rounding mode <code>rm</code>.
+      Returns a new Decimal whose value is the value of this Decimal rounded to a maximum of
+      <code>dp</code> decimal places using rounding mode <code>rm</code>.
     </p>
     <p>
       If <code>dp</code> is omitted, the return value will have the same value as this Decimal.
@@ -984,9 +923,9 @@ x.toDecimalPlaces(0)                // '12'
 x.toDecimalPlaces(1, 0)             // '12.3'
 
 y = new Decimal(9876.54321)
-y.toDP(3)                           // '9876.543'
-y.toDP(1, 0)                        // '9876.6'
-y.toDP(1, Decimal.ROUND_DOWN)       // '9876.5'</pre>
+y.todp(3)                           // '9876.543'
+y.todp(1, 0)                        // '9876.6'
+y.todp(1, Decimal.ROUND_DOWN)       // '9876.5'</pre>
 
 
 
@@ -1077,7 +1016,27 @@ y.toFixed(5)             // '3.45600'</pre>
 
 
 
-    <h5 id="toJSON">toJSON<code class='inset'>.toJSON() <i>&rArr; string</i></code></h5>
+    <h5 id="toInteger">toInteger<code class='inset'>.toint() <i>&rArr; Decimal</i></code></h5>
+    <p>
+      Returns a new Decimal whose value is the value of this Decimal rounded to a whole number using
+      rounding mode <a href='#rounding'><code>rounding</code></a>.
+    </p>
+    <p>
+      To emulate <code>Math.round</code>, set <a href='#rounding'><code>rounding</code></a> to
+      <code>7</code>, i.e. <a href='#modes'><code>ROUND_HALF_CEIL</code></a>.
+    </p>
+    <pre>
+Decimal.config({ rounding: 4 })
+x = 1234.5
+x.toInteger()                            // '1235'
+
+Decimal.rounding = Decimal.ROUND_DOWN
+x.toint()                                // '1234'
+x                                        // '1234.5'</pre>
+
+
+
+<h5 id="toJSON">toJSON<code class='inset'>.toJSON() <i>&rArr; string</i></code></h5>
     <p>As <a href='#toString'><code>toString</code></a>.</p>
 
 
@@ -1160,16 +1119,16 @@ y.toPrecision(5)                         // '45.600'</pre>
 
 
 
-    <h5 id="toSD">
-      toSignificantDigits<code class='inset'>.toSD([sd [, rm]]) <i>&rArr; Decimal</i></code>
+    <h5 id="tosd">
+      toSignificantDigits<code class='inset'>.tosd([sd [, rm]]) <i>&rArr; Decimal</i></code>
     </h5>
     <p>
       <code>sd</code>: <i>number</i>: integer, <code>1</code> to <code>1e+9</code> inclusive.<br />
       <code>rm</code>: <i>number</i>: integer, <code>0</code> to <code>8</code> inclusive.
     </p>
     <p>
-      Returns a new Decimal whose value is the value of this Decimal rounded to <code>sd</code>
-      significant digits using rounding mode <code>rm</code>.
+      Returns a new Decimal whose value is the value of this Decimal rounded to a maximum of
+      <code>sd</code> significant digits using rounding mode <code>rm</code>.
     </p>
     <p>
       If <code>sd</code> is omitted, the return value will be rounded to
@@ -1187,8 +1146,8 @@ x = new Decimal(9876.54321)
 x.toSignificantDigits()                          // '9876.5'
 x.toSignificantDigits(6)                         // '9876.54'
 x.toSignificantDigits(6, Decimal.ROUND_UP)       // '9876.55'
-x.toSD(2)                                        // '9900'
-x.toSD(2, 1)                                     // '9800'
+x.tosd(2)                                        // '9900'
+x.tosd(2, 1)                                     // '9800'
 x                                                // '9876.54321'</pre>
 
 
@@ -1212,23 +1171,7 @@ y.toString()                             // '1.23456789'</pre>
 
 
 
-    <h5 id="trunc">truncated<code class='inset'>.trunc() <i>&rArr; Decimal</i></code></h5>
-    <p>
-      Returns a new Decimal whose value is the value of this Decimal truncated to a whole number.
-    </p>
-    <p>
-      The return value is not affected by the value of the
-      <a href='#precision'><code>precision</code></a> setting.
-    </p>
-    <pre>
-x = new Decimal(123.456)
-x.truncated()                            // '123'
-y = new Decimal(-12.3)
-y.trunc()                                // '-12'</pre>
-
-
-
-    <h5 id="valueOf">valueOf<code class='inset'>.valueOf() <i>&rArr; string</i></code></h5>
+    <h5 id="valueOf">valueOf<code class='inset'>.val() <i>&rArr; string</i></code></h5>
     <p>As <a href='#toString'><code>toString</code></a>.</p>
 
 
@@ -1359,9 +1302,10 @@ z = x.multiply(y)                 // 4.1400000</pre>
     </p>
   </div>
 
-  <script>/* decimal.js-light v1.0.0 https://github.com/MikeMcl/decimal.js-light/LICENCE */
-!function(r){"use strict";function t(r,t){var n,e,i,o,s,u,f,c,h=r.constructor,d=h.precision;if(!r.s||!t.s)return t.s||(t=new h(r)),b?l(t,d):t;if(f=r.d,c=t.d,s=r.e,i=t.e,f=f.slice(),o=s-i){for(0>o?(e=f,o=-o,u=c.length):(e=c,i=s,u=f.length),s=Math.ceil(d/L),u=s>u?s+1:u+1,o>u&&(o=u,e.length=1),e.reverse();o--;)e.push(0);e.reverse()}for(u=f.length,o=c.length,0>u-o&&(o=u,e=c,c=f,f=e),n=0;o;)n=(f[--o]=f[o]+c[o]+n)/M|0,f[o]%=M;for(n&&(f.unshift(n),++i),u=f.length;0==f[--u];)f.pop();return t.d=f,t.e=i,b?l(t,d):t}function n(r,t,n){if(r!==~~r||t>r||r>n)throw Error(q+r)}function e(r){var t,n,e,i=r.length-1,o="",s=r[0];if(i>0){for(o+=s,t=1;i>t;t++)e=r[t]+"",n=L-e.length,n&&(o+=u(n)),o+=e;s=r[t],e=s+"",n=L-e.length,n&&(o+=u(n))}else if(0===s)return"0";for(;s%10===0;)s/=10;return o+s}function i(r,t){var n,i,s,u,f,c,h=0,d=0,a=r.constructor,g=a.precision;if(o(r)>16)throw Error(P+o(r));if(!r.s)return new a(E);for(null==t?(b=!1,c=g):c=t,f=new a(.03125);r.abs().gte(.1);)r=r.times(f),d+=5;for(i=Math.log(_(2,d))/Math.LN10*2+5|0,c+=i,n=s=u=new a(E),a.precision=c;;){if(s=l(s.times(r),c),n=n.times(++h),f=u.plus(T(s,n,c)),e(f.d).slice(0,c)===e(u.d).slice(0,c)){for(;d--;)u=l(u.times(u),c);return a.precision=g,null==t?(b=!0,l(u,g)):u}u=f}}function o(r){for(var t=1,n=r.d[0];n>=10;n/=10)t++;return t+r.e*L-1}function s(r,t,n){if(t>I)throw b=!0,n&&(r.precision=n),Error(D+"LN10 precision limit exceeded");return l(new r(x),t)}function u(r){for(var t="";r--;)t+="0";return t}function f(r,t){var n,i,u,c,h,d,a,g,p,w=1,v=10,m=r,N=m.d,x=m.constructor,O=x.precision;if(m.s<1)throw Error(D+(m.s?"NaN":"-Infinity"));if(m.eq(E))return new x(0);if(null==t?(b=!1,g=O):g=t,m.eq(10))return null==t&&(b=!0),s(x,g);if(g+=v,x.precision=g,n=e(N),i=n.charAt(0),c=o(m),!(Math.abs(c)<15e14))return a=s(x,g+2,O).times(c+""),m=f(new x(i+"."+n.slice(1)),g-v).plus(a),x.precision=O,null==t?(b=!0,l(m,O)):m;for(;7>i&&1!=i||1==i&&n.charAt(1)>3;)m=m.times(r),n=e(m.d),i=n.charAt(0),w++;for(c=o(m),i>1?(m=new x("0."+n),c++):m=new x(i+"."+n.slice(1)),d=h=m=T(m.minus(E),m.plus(E),g),p=l(m.times(m),g),u=3;;){if(h=l(h.times(p),g),a=d.plus(T(h,new x(u),g)),e(a.d).slice(0,g)===e(d.d).slice(0,g))return d=d.times(2),0!==c&&(d=d.plus(s(x,g+2,O).times(c+""))),d=T(d,new x(w),g),x.precision=O,null==t?(b=!0,l(d,O)):d;d=a,u+=2}}function c(r,t,n){for(var e,i=new r(t[0]),o=0;++o<t.length;)i[n](e=new r(t[o]))&&(i=e);return i}function h(r,t){var n,e,i;for((n=t.indexOf("."))>-1&&(t=t.replace(".","")),(e=t.search(/e/i))>0?(0>n&&(n=e),n+=+t.slice(e+1),t=t.substring(0,e)):0>n&&(n=t.length),e=0;48===t.charCodeAt(e);)++e;for(i=t.length;48===t.charCodeAt(i-1);)--i;if(t=t.slice(e,i)){if(i-=e,n=n-e-1,r.e=y(n/L),r.d=[],e=(n+1)%L,0>n&&(e+=L),i>e){for(e&&r.d.push(+t.slice(0,e)),i-=L;i>e;)r.d.push(+t.slice(e,e+=L));t=t.slice(e),e=L-t.length}else e-=i;for(;e--;)t+="0";if(r.d.push(+t),b&&(r.e>U||r.e<-U))throw Error(P+n)}else r.s=0,r.e=0,r.d=[0];return r}function l(r,t,n){var e,i,s,u,f,c,h,l,d=r.d;for(u=1,s=d[0];s>=10;s/=10)u++;if(e=t-u,0>e)e+=L,i=t,h=d[l=0];else{if(l=Math.ceil((e+1)/L),s=d.length,l>=s)return r;for(h=s=d[l],u=1;s>=10;s/=10)u++;e%=L,i=e-L+u}if(void 0!==n&&(s=_(10,u-i-1),f=h/s%10|0,c=0>t||void 0!==d[l+1]||h%s,c=4>n?(f||c)&&(0==n||n==(r.s<0?3:2)):f>5||5==f&&(4==n||c||6==n&&(e>0?i>0?h/_(10,u-i):0:d[l-1])%10&1||n==(r.s<0?8:7))),1>t||!d[0])return c?(s=o(r),d.length=1,t=t-s-1,d[0]=_(10,(L-t%L)%L),r.e=y(-t/L)||0):(d.length=1,d[0]=r.e=r.s=0),r;if(0==e?(d.length=l,s=1,l--):(d.length=l+1,s=_(10,L-e),d[l]=i>0?(h/_(10,u-i)%_(10,i)|0)*s:0),c)for(;;){if(0==l){(d[0]+=s)==M&&(d[0]=1,++r.e);break}if(d[l]+=s,d[l]!=M)break;d[l--]=0,s=1}for(e=d.length;0===d[--e];)d.pop();if(b&&(r.e>U||r.e<-U))throw Error(P+o(r));return r}function d(r,t){var n,e,i,o,s,u,f,c,h,d,a=r.constructor,g=a.precision;if(!r.s||!t.s)return t.s?t.s=-t.s:t=new a(r),b?l(t,g):t;if(f=r.d,d=t.d,e=t.e,c=r.e,f=f.slice(),s=c-e){for(h=0>s,h?(n=f,s=-s,u=d.length):(n=d,e=c,u=f.length),i=Math.max(Math.ceil(g/L),u)+2,s>i&&(s=i,n.length=1),n.reverse(),i=s;i--;)n.push(0);n.reverse()}else{for(i=f.length,u=d.length,h=u>i,h&&(u=i),i=0;u>i;i++)if(f[i]!=d[i]){h=f[i]<d[i];break}s=0}for(h&&(n=f,f=d,d=n,t.s=-t.s),u=f.length,i=d.length-u;i>0;--i)f[u++]=0;for(i=d.length;i>s;){if(f[--i]<d[i]){for(o=i;o&&0===f[--o];)f[o]=M-1;--f[o],f[i]+=M}f[i]-=d[i]}for(;0===f[--u];)f.pop();for(;0===f[0];f.shift())--e;return f[0]?(t.d=f,t.e=e,b?l(t,g):t):new a(0)}function a(r,t,n){var i,s=o(r),f=e(r.d),c=f.length;return t?(n&&(i=n-c)>0?f=f.charAt(0)+"."+f.slice(1)+u(i):c>1&&(f=f.charAt(0)+"."+f.slice(1)),f=f+(0>s?"e":"e+")+s):0>s?(f="0."+u(-s-1)+f,n&&(i=n-c)>0&&(f+=u(i))):s>=c?(f+=u(s+1-c),n&&(i=n-s-1)>0&&(f=f+"."+u(i))):((i=s+1)<c&&(f=f.slice(0,i)+"."+f.slice(i)),n&&(i=n-c)>0&&(s+1===c&&(f+="."),f+=u(i))),r.s<0?"-"+f:f}function g(r,t){return r.length>t?(r.length=t,!0):void 0}function p(r){function t(r){var n=this;if(!(n instanceof t))return new t(r);if(n.constructor=t,r instanceof t)return n.s=r.s,n.e=r.e,void(n.d=(r=r.d)?r.slice():r);if("number"==typeof r){if(0*r!==0)throw Error(q+r);if(r>0)n.s=1;else{if(!(0>r))return n.s=0,n.e=0,void(n.d=[0]);r=-r,n.s=-1}return r===~~r&&1e7>r?(n.e=0,void(n.d=[r])):h(n,r.toString())}if("string"!=typeof r)throw Error(q+r);if(45===r.charCodeAt(0)?(r=r.slice(1),n.s=-1):n.s=1,!A.test(r))throw Error(q+r);h(n,r)}var n,e,i;if(t.prototype=F,t.ROUND_UP=0,t.ROUND_DOWN=1,t.ROUND_CEIL=2,t.ROUND_FLOOR=3,t.ROUND_HALF_UP=4,t.ROUND_HALF_DOWN=5,t.ROUND_HALF_EVEN=6,t.ROUND_HALF_CEIL=7,t.ROUND_HALF_FLOOR=8,t.clone=p,t.config=w,t.max=v,t.min=m,void 0===r&&(r={}),r)for(i=["precision","rounding","toExpNeg","toExpPos"],n=0;n<i.length;)r.hasOwnProperty(e=i[n++])||(r[e]=this[e]);return t.config(r),t}function w(r){if(!r||"object"!=typeof r)throw Error(D+"Object expected");var t,n,e,i=["precision",1,N,"rounding",0,8,"toExpNeg",-1/0,0,"toExpPos",0,1/0];for(t=0;t<i.length;t+=3)if(void 0!==(e=r[n=i[t]])){if(!(y(e)===e&&e>=i[t+1]&&e<=i[t+2]))throw Error(q+n+": "+e);this[n]=e}return this}function v(){return c(this,arguments,"lt")}function m(){return c(this,arguments,"gt")}var E,N=1e9,x="2.302585092994045684017991454684364207601101488628772976033327900967572609677352480235997205089598298341967784042286248633409525465082806756666287369098781689482907208325554680843799894826233198528393505308965377732628846163366222287698219886746543667474404243274365155048934314939391479619404400222105101714174800368808401264708068556774321622835522011480466371565912137345074785694768346361679210180644507064800027",O={precision:20,rounding:4,toExpNeg:-7,toExpPos:21},b=!0,D="[DecimalError] ",q=D+"Invalid argument: ",P=D+"Exponent out of range: ",y=Math.floor,_=Math.pow,A=/^(\d+(\.\d*)?|\.\d+)(e[+-]?\d+)?$/i,M=1e7,L=7,R=9007199254740991,U=y(R/L),I=x.length-1,F={};F.absoluteValue=F.abs=function(){var r=new this.constructor(this);return r.s&&(r.s=1),r},F.ceil=function(){return l(new this.constructor(this),o(this)+1,2)},F.comparedTo=F.cmp=function(r){var t,n,e,i,o=this;if(r=new o.constructor(r),o.s!==r.s)return o.s||-r.s;if(o.e!==r.e)return o.e>r.e^o.s<0?1:-1;for(e=o.d.length,i=r.d.length,t=0,n=i>e?e:i;n>t;++t)if(o.d[t]!==r.d[t])return o.d[t]>r.d[t]^o.s<0?1:-1;return e===i?0:e>i^o.s<0?1:-1},F.decimalPlaces=F.dp=function(){var r=this,t=r.d.length-1,n=(t-r.e)*L;if(t=r.d[t])for(;t%10==0;t/=10)n--;return 0>n?0:n},F.dividedBy=F.div=function(r){return T(this,new this.constructor(r))},F.dividedToIntegerBy=F.divToInt=function(r){var t=this,n=t.constructor;return l(T(t,new n(r),0,1),n.precision)},F.equals=F.eq=function(r){return!this.cmp(r)},F.floor=function(){return l(new this.constructor(this),o(this)+1,3)},F.greaterThan=F.gt=function(r){return this.cmp(r)>0},F.greaterThanOrEqualTo=F.gte=function(r){return this.cmp(r)>=0},F.isInteger=F.isInt=function(){return this.e>this.d.length-2},F.isNegative=F.isNeg=function(){return this.s<0},F.isPositive=F.isPos=function(){return this.s>0},F.isZero=function(){return 0===this.s},F.lessThan=F.lt=function(r){return this.cmp(r)<0},F.lessThanOrEqualTo=F.lte=function(r){return this.cmp(r)<1},F.logarithm=F.log=function(r){var t,n=this,e=n.constructor,i=e.precision,o=i+5;if(void 0===r)r=new e(10);else if(r=new e(r),r.s<1||r.eq(E))throw Error(D+"NaN");if(n.s<1)throw Error(D+(n.s?"NaN":"-Infinity"));return n.eq(E)?new e(0):(b=!1,t=T(f(n,o),f(r,o),o),b=!0,l(t,i))},F.minus=F.sub=function(r){var n=this;return r=new n.constructor(r),n.s==r.s?d(n,r):t(n,(r.s=-r.s,r))},F.modulo=F.mod=function(r){var t,n=this,e=n.constructor,i=e.precision;if(r=new e(r),!r.s)throw Error(D+"NaN");return n.s?(b=!1,t=T(n,r,0,1).times(r),b=!0,n.minus(t)):l(new e(n),i)},F.naturalExponential=F.exp=function(){return i(this)},F.naturalLogarithm=F.ln=function(){return f(this)},F.negated=F.neg=function(){var r=new this.constructor(this);return r.s=-r.s||0,r},F.plus=F.add=function(r){var n=this;return r=new n.constructor(r),n.s==r.s?t(n,r):d(n,(r.s=-r.s,r))},F.precision=F.sd=function(r){var t,n,e,i=this;if(void 0!==r&&r!==!!r&&1!==r&&0!==r)throw Error(q+r);if(t=o(i)+1,e=i.d.length-1,n=e*L+1,e=i.d[e]){for(;e%10==0;e/=10)n--;for(e=i.d[0];e>=10;e/=10)n++}return r&&t>n?t:n},F.round=function(){var r=this,t=r.constructor;return l(new t(r),o(r)+1,t.rounding)},F.squareRoot=F.sqrt=function(){var r,t,n,i,s,u,f,c=this,h=c.constructor;if(c.s<1){if(!c.s)return new h(0);throw Error(D+"NaN")}for(r=o(c),b=!1,s=Math.sqrt(+c),0==s||s==1/0?(t=e(c.d),(t.length+r)%2==0&&(t+="0"),s=Math.sqrt(t),r=y((r+1)/2)-(0>r||r%2),s==1/0?t="1e"+r:(t=s.toExponential(),t=t.slice(0,t.indexOf("e")+1)+r),i=new h(t)):i=new h(s.toString()),n=h.precision,s=f=n+3;;)if(u=i,i=u.plus(T(c,u,f+2)).times(.5),e(u.d).slice(0,f)===(t=e(i.d)).slice(0,f)){if(t=t.slice(f-3,f+1),s==f&&"4999"==t){if(l(u,n+1,0),u.times(u).eq(c)){i=u;break}}else if("9999"!=t)break;f+=4}return b=!0,l(i,n)},F.times=F.mul=function(r){var t,n,e,i,o,s,u,f,c,h=this,d=h.constructor,a=h.d,g=(r=new d(r)).d;if(!h.s||!r.s)return new d(0);for(r.s*=h.s,n=h.e+r.e,f=a.length,c=g.length,c>f&&(o=a,a=g,g=o,s=f,f=c,c=s),o=[],s=f+c,e=s;e--;)o.push(0);for(e=c;--e>=0;){for(t=0,i=f+e;i>e;)u=o[i]+g[e]*a[i-e-1]+t,o[i--]=u%M|0,t=u/M|0;o[i]=(o[i]+t)%M|0}for(;!o[--s];)o.pop();for(t?++n:o.shift(),e=o.length;!o[--e];)o.pop();return r.d=o,r.e=n,b?l(r,d.precision):r},F.toDecimalPlaces=F.toDP=function(r,t){var e=this,i=e.constructor;return e=new i(e),void 0===r?e:(n(r,0,N),void 0===t?t=i.rounding:n(t,0,8),l(e,r+o(e)+1,t))},F.toExponential=function(r,t){var e,i=this,o=i.constructor;return void 0===r?e=a(i,!0):(n(r,0,N),void 0===t?t=o.rounding:n(t,0,8),i=l(new o(i),r+1,t),e=a(i,!0,r+1)),e},F.toFixed=function(r,t){var e,i,s=this,u=s.constructor;return void 0===r?a(s):(n(r,0,N),void 0===t?t=u.rounding:n(t,0,8),i=l(new u(s),r+o(s)+1,t),e=a(i.abs(),!1,r+o(i)+1),s.isNeg()&&!s.isZero()?"-"+e:e)},F.toNumber=function(){return+this},F.toPower=F.pow=function(r){var t,n,e,o,s,u,c=this,h=c.constructor,d=12,a=+(r=new h(r));if(!r.s)return new h(E);if(c=new h(c),!c.s){if(r.s<1)throw Error(D+"Infinity");return c}if(c.eq(E))return c;if(e=h.precision,r.eq(E))return l(c,e);if(t=r.e,n=r.d.length-1,u=t>=n,s=c.s,u){if((n=0>a?-a:a)<=R){for(o=new h(E),t=Math.ceil(e/L+4),b=!1;n%2&&(o=o.times(c),g(o.d,t)),n=y(n/2),0!==n;)c=c.times(c),g(c.d,t);return b=!0,r.s<0?new h(E).div(o):l(o,e)}}else if(0>s)throw Error(D+"NaN");return s=0>s&&1&r.d[Math.max(t,n)]?-1:1,c.s=1,b=!1,o=r.times(f(c,e+d)),b=!0,o=i(o),o.s=s,o},F.toPrecision=function(r,t){var e,i,s=this,u=s.constructor;return void 0===r?(e=o(s),i=a(s,e<=u.toExpNeg||e>=u.toExpPos)):(n(r,1,N),void 0===t?t=u.rounding:n(t,0,8),s=l(new u(s),r,t),e=o(s),i=a(s,e>=r||e<=u.toExpNeg,r)),i},F.toSignificantDigits=F.toSD=function(r,t){var e=this,i=e.constructor;return void 0===r?(r=i.precision,t=i.rounding):(n(r,1,N),void 0===t?t=i.rounding:n(t,0,8)),l(new i(e),r,t)},F.toString=F.valueOf=F.toJSON=function(){var r=this,t=o(r),n=r.constructor;return a(r,t<=n.toExpNeg||t>=n.toExpPos)},F.truncated=F.trunc=function(){return l(new this.constructor(this),o(this)+1)};var T=function(){function r(r,t){var n,e=0,i=r.length;for(r=r.slice();i--;)n=r[i]*t+e,r[i]=n%M|0,e=n/M|0;return e&&r.unshift(e),r}function t(r,t,n,e){var i,o;if(n!=e)o=n>e?1:-1;else for(i=o=0;n>i;i++)if(r[i]!=t[i]){o=r[i]>t[i]?1:-1;break}return o}function n(r,t,n){for(var e=0;n--;)r[n]-=e,e=r[n]<t[n]?1:0,r[n]=e*M+r[n]-t[n];for(;!r[0]&&r.length>1;)r.shift()}return function(e,i,s,u){var f,c,h,d,a,g,p,w,v,m,E,N,x,O,b,q,P,y,_=e.constructor,A=e.s==i.s?1:-1,R=e.d,U=i.d;if(!e.s)return new _(e);if(!i.s)throw Error(D+"Division by zero");for(c=e.e-i.e,P=U.length,b=R.length,p=new _(A),w=p.d=[],h=0;U[h]==(R[h]||0);)++h;if(U[h]>(R[h]||0)&&--c,N=null==s?s=_.precision:u?s+(o(e)-o(i))+1:s,0>N)return new _(0);if(N=N/L+2|0,h=0,1==P)for(d=0,U=U[0],N++;(b>h||d)&&N--;h++)x=d*M+(R[h]||0),w[h]=x/U|0,d=x%U|0;else{for(d=M/(U[0]+1)|0,d>1&&(U=r(U,d),R=r(R,d),P=U.length,b=R.length),O=P,v=R.slice(0,P),m=v.length;P>m;)v[m++]=0;y=U.slice(),y.unshift(0),q=U[0],U[1]>=M/2&&++q;do d=0,f=t(U,v,P,m),0>f?(E=v[0],P!=m&&(E=E*M+(v[1]||0)),d=E/q|0,d>1?(d>=M&&(d=M-1),a=r(U,d),g=a.length,m=v.length,f=t(a,v,g,m),1==f&&(d--,n(a,g>P?y:U,g))):(0==d&&(f=d=1),a=U.slice()),g=a.length,m>g&&a.unshift(0),n(v,a,m),-1==f&&(m=v.length,f=t(U,v,P,m),1>f&&(d++,n(v,m>P?y:U,m))),m=v.length):0===f&&(d++,v=[0]),w[h++]=d,f&&v[0]?v[m++]=R[O]||0:(v=[R[O]],m=1);while((O++<b||void 0!==v[0])&&N--)}return w[0]||w.shift(),p.e=c,l(p,u?s+o(p)+1:s)}}();O=p(O),E=new O(1),x=new O(x),"function"==typeof define&&define.amd?define(function(){return O}):"undefined"!=typeof module&&module.exports?module.exports=O:(r||(r="undefined"!=typeof self&&self&&self.self==self?self:Function("return this")()),r.Decimal=O)}(this);
+  <script>/* decimal.js-light v2.0.0 https://github.com/MikeMcl/decimal.js-light/LICENCE */
+!function(r){"use strict";function e(r,e){var t,n,i,o,s,u,f,c,l=r.constructor,d=l.precision;if(!r.s||!e.s)return e.s||(e=new l(r)),E?h(e,d):e;if(f=r.d,c=e.d,s=r.e,i=e.e,f=f.slice(),o=s-i){for(0>o?(n=f,o=-o,u=c.length):(n=c,i=s,u=f.length),s=Math.ceil(d/y),u=s>u?s+1:u+1,o>u&&(o=u,n.length=1),n.reverse();o--;)n.push(0);n.reverse()}for(u=f.length,o=c.length,0>u-o&&(o=u,n=c,c=f,f=n),t=0;o;)t=(f[--o]=f[o]+c[o]+t)/q|0,f[o]%=q;for(t&&(f.unshift(t),++i),u=f.length;0==f[--u];)f.pop();return e.d=f,e.e=i,E?h(e,d):e}function t(r,e,t){if(r!==~~r||e>r||r>t)throw Error(x+r)}function n(r){var e,t,n,i=r.length-1,o="",s=r[0];if(i>0){for(o+=s,e=1;i>e;e++)n=r[e]+"",t=y-n.length,t&&(o+=u(t)),o+=n;s=r[e],n=s+"",t=y-n.length,t&&(o+=u(t))}else if(0===s)return"0";for(;s%10===0;)s/=10;return o+s}function i(r,e){var t,i,s,u,f,c,l=0,d=0,a=r.constructor,g=a.precision;if(o(r)>16)throw Error(O+o(r));if(!r.s)return new a(v);for(null==e?(E=!1,c=g):c=e,f=new a(.03125);r.abs().gte(.1);)r=r.times(f),d+=5;for(i=Math.log(L(2,d))/Math.LN10*2+5|0,c+=i,t=s=u=new a(v),a.precision=c;;){if(s=h(s.times(r),c),t=t.times(++l),f=u.plus(P(s,t,c)),n(f.d).slice(0,c)===n(u.d).slice(0,c)){for(;d--;)u=h(u.times(u),c);return a.precision=g,null==e?(E=!0,h(u,g)):u}u=f}}function o(r){for(var e=1,t=r.d[0];t>=10;t/=10)e++;return e+r.e*y-1}function s(r,e,t){if(e>r.LN10.sd())throw E=!0,t&&(r.precision=t),Error(N+"LN10 precision limit exceeded");return h(new r(r.LN10),e)}function u(r){for(var e="";r--;)e+="0";return e}function f(r,e){var t,i,u,c,l,d,a,g,p,w=1,m=10,x=r,O=x.d,b=x.constructor,L=b.precision;if(x.s<1)throw Error(N+(x.s?"NaN":"-Infinity"));if(x.eq(v))return new b(0);if(null==e?(E=!1,g=L):g=e,x.eq(10))return null==e&&(E=!0),s(b,g);if(g+=m,b.precision=g,t=n(O),i=t.charAt(0),c=o(x),!(Math.abs(c)<15e14))return a=s(b,g+2,L).times(c+""),x=f(new b(i+"."+t.slice(1)),g-m).plus(a),b.precision=L,null==e?(E=!0,h(x,L)):x;for(;7>i&&1!=i||1==i&&t.charAt(1)>3;)x=x.times(r),t=n(x.d),i=t.charAt(0),w++;for(c=o(x),i>1?(x=new b("0."+t),c++):x=new b(i+"."+t.slice(1)),d=l=x=P(x.minus(v),x.plus(v),g),p=h(x.times(x),g),u=3;;){if(l=h(l.times(p),g),a=d.plus(P(l,new b(u),g)),n(a.d).slice(0,g)===n(d.d).slice(0,g))return d=d.times(2),0!==c&&(d=d.plus(s(b,g+2,L).times(c+""))),d=P(d,new b(w),g),b.precision=L,null==e?(E=!0,h(d,L)):d;d=a,u+=2}}function c(r,e){var t,n,i;for((t=e.indexOf("."))>-1&&(e=e.replace(".","")),(n=e.search(/e/i))>0?(0>t&&(t=n),t+=+e.slice(n+1),e=e.substring(0,n)):0>t&&(t=e.length),n=0;48===e.charCodeAt(n);)++n;for(i=e.length;48===e.charCodeAt(i-1);)--i;if(e=e.slice(n,i)){if(i-=n,t=t-n-1,r.e=b(t/y),r.d=[],n=(t+1)%y,0>t&&(n+=y),i>n){for(n&&r.d.push(+e.slice(0,n)),i-=y;i>n;)r.d.push(+e.slice(n,n+=y));e=e.slice(n),n=y-e.length}else n-=i;for(;n--;)e+="0";if(r.d.push(+e),E&&(r.e>_||r.e<-_))throw Error(O+t)}else r.s=0,r.e=0,r.d=[0];return r}function h(r,e,t){var n,i,s,u,f,c,h,l,d=r.d;for(u=1,s=d[0];s>=10;s/=10)u++;if(n=e-u,0>n)n+=y,i=e,h=d[l=0];else{if(l=Math.ceil((n+1)/y),s=d.length,l>=s)return r;for(h=s=d[l],u=1;s>=10;s/=10)u++;n%=y,i=n-y+u}if(void 0!==t&&(s=L(10,u-i-1),f=h/s%10|0,c=0>e||void 0!==d[l+1]||h%s,c=4>t?(f||c)&&(0==t||t==(r.s<0?3:2)):f>5||5==f&&(4==t||c||6==t&&(n>0?i>0?h/L(10,u-i):0:d[l-1])%10&1||t==(r.s<0?8:7))),1>e||!d[0])return c?(s=o(r),d.length=1,e=e-s-1,d[0]=L(10,(y-e%y)%y),r.e=b(-e/y)||0):(d.length=1,d[0]=r.e=r.s=0),r;if(0==n?(d.length=l,s=1,l--):(d.length=l+1,s=L(10,y-n),d[l]=i>0?(h/L(10,u-i)%L(10,i)|0)*s:0),c)for(;;){if(0==l){(d[0]+=s)==q&&(d[0]=1,++r.e);break}if(d[l]+=s,d[l]!=q)break;d[l--]=0,s=1}for(n=d.length;0===d[--n];)d.pop();if(E&&(r.e>_||r.e<-_))throw Error(O+o(r));return r}function l(r,e){var t,n,i,o,s,u,f,c,l,d,a=r.constructor,g=a.precision;if(!r.s||!e.s)return e.s?e.s=-e.s:e=new a(r),E?h(e,g):e;if(f=r.d,d=e.d,n=e.e,c=r.e,f=f.slice(),s=c-n){for(l=0>s,l?(t=f,s=-s,u=d.length):(t=d,n=c,u=f.length),i=Math.max(Math.ceil(g/y),u)+2,s>i&&(s=i,t.length=1),t.reverse(),i=s;i--;)t.push(0);t.reverse()}else{for(i=f.length,u=d.length,l=u>i,l&&(u=i),i=0;u>i;i++)if(f[i]!=d[i]){l=f[i]<d[i];break}s=0}for(l&&(t=f,f=d,d=t,e.s=-e.s),u=f.length,i=d.length-u;i>0;--i)f[u++]=0;for(i=d.length;i>s;){if(f[--i]<d[i]){for(o=i;o&&0===f[--o];)f[o]=q-1;--f[o],f[i]+=q}f[i]-=d[i]}for(;0===f[--u];)f.pop();for(;0===f[0];f.shift())--n;return f[0]?(e.d=f,e.e=n,E?h(e,g):e):new a(0)}function d(r,e,t){var i,s=o(r),f=n(r.d),c=f.length;return e?(t&&(i=t-c)>0?f=f.charAt(0)+"."+f.slice(1)+u(i):c>1&&(f=f.charAt(0)+"."+f.slice(1)),f=f+(0>s?"e":"e+")+s):0>s?(f="0."+u(-s-1)+f,t&&(i=t-c)>0&&(f+=u(i))):s>=c?(f+=u(s+1-c),t&&(i=t-s-1)>0&&(f=f+"."+u(i))):((i=s+1)<c&&(f=f.slice(0,i)+"."+f.slice(i)),t&&(i=t-c)>0&&(s+1===c&&(f+="."),f+=u(i))),r.s<0?"-"+f:f}function a(r,e){return r.length>e?(r.length=e,!0):void 0}function g(r){function e(r){var t=this;if(!(t instanceof e))return new e(r);if(t.constructor=e,r instanceof e)return t.s=r.s,t.e=r.e,void(t.d=(r=r.d)?r.slice():r);if("number"==typeof r){if(0*r!==0)throw Error(x+r);if(r>0)t.s=1;else{if(!(0>r))return t.s=0,t.e=0,void(t.d=[0]);r=-r,t.s=-1}return r===~~r&&1e7>r?(t.e=0,void(t.d=[r])):c(t,r.toString())}if("string"!=typeof r)throw Error(x+r);if(45===r.charCodeAt(0)?(r=r.slice(1),t.s=-1):t.s=1,!D.test(r))throw Error(x+r);c(t,r)}var t,n,i;if(e.prototype=A,e.ROUND_UP=0,e.ROUND_DOWN=1,e.ROUND_CEIL=2,e.ROUND_FLOOR=3,e.ROUND_HALF_UP=4,e.ROUND_HALF_DOWN=5,e.ROUND_HALF_EVEN=6,e.ROUND_HALF_CEIL=7,e.ROUND_HALF_FLOOR=8,e.clone=g,e.config=e.set=p,void 0===r&&(r={}),r)for(i=["precision","rounding","toExpNeg","toExpPos","LN10"],t=0;t<i.length;)r.hasOwnProperty(n=i[t++])||(r[n]=this[n]);return e.config(r),e}function p(r){if(!r||"object"!=typeof r)throw Error(N+"Object expected");var e,t,n,i=["precision",1,w,"rounding",0,8,"toExpNeg",-1/0,0,"toExpPos",0,1/0];for(e=0;e<i.length;e+=3)if(void 0!==(n=r[t=i[e]])){if(!(b(n)===n&&n>=i[e+1]&&n<=i[e+2]))throw Error(x+t+": "+n);this[t]=n}if(void 0!==(n=r[t="LN10"])){if(n!=Math.LN10)throw Error(x+t+": "+n);this[t]=new this(n)}return this}var v,w=1e9,m={precision:20,rounding:4,toExpNeg:-7,toExpPos:21,LN10:"2.302585092994045684017991454684364207601101488628772976033327900967572609677352480235997205089598298341967784042286"},E=!0,N="[DecimalError] ",x=N+"Invalid argument: ",O=N+"Exponent out of range: ",b=Math.floor,L=Math.pow,D=/^(\d+(\.\d*)?|\.\d+)(e[+-]?\d+)?$/i,q=1e7,y=7,M=9007199254740991,_=b(M/y),A={};A.absoluteValue=A.abs=function(){var r=new this.constructor(this);return r.s&&(r.s=1),r},A.comparedTo=A.cmp=function(r){var e,t,n,i,o=this;if(r=new o.constructor(r),o.s!==r.s)return o.s||-r.s;if(o.e!==r.e)return o.e>r.e^o.s<0?1:-1;for(n=o.d.length,i=r.d.length,e=0,t=i>n?n:i;t>e;++e)if(o.d[e]!==r.d[e])return o.d[e]>r.d[e]^o.s<0?1:-1;return n===i?0:n>i^o.s<0?1:-1},A.decimalPlaces=A.dp=function(){var r=this,e=r.d.length-1,t=(e-r.e)*y;if(e=r.d[e])for(;e%10==0;e/=10)t--;return 0>t?0:t},A.dividedBy=A.div=function(r){return P(this,new this.constructor(r))},A.dividedToIntegerBy=A.idiv=function(r){var e=this,t=e.constructor;return h(P(e,new t(r),0,1),t.precision)},A.equals=A.eq=function(r){return!this.cmp(r)},A.greaterThan=A.gt=function(r){return this.cmp(r)>0},A.greaterThanOrEqualTo=A.gte=function(r){return this.cmp(r)>=0},A.isInteger=A.isint=function(){return this.e>this.d.length-2},A.isNegative=A.isneg=function(){return this.s<0},A.isPositive=A.ispos=function(){return this.s>0},A.isZero=function(){return 0===this.s},A.lessThan=A.lt=function(r){return this.cmp(r)<0},A.lessThanOrEqualTo=A.lte=function(r){return this.cmp(r)<1},A.logarithm=A.log=function(r){var e,t=this,n=t.constructor,i=n.precision,o=i+5;if(void 0===r)r=new n(10);else if(r=new n(r),r.s<1||r.eq(v))throw Error(N+"NaN");if(t.s<1)throw Error(N+(t.s?"NaN":"-Infinity"));return t.eq(v)?new n(0):(E=!1,e=P(f(t,o),f(r,o),o),E=!0,h(e,i))},A.minus=A.sub=function(r){var t=this;return r=new t.constructor(r),t.s==r.s?l(t,r):e(t,(r.s=-r.s,r))},A.modulo=A.mod=function(r){var e,t=this,n=t.constructor,i=n.precision;if(r=new n(r),!r.s)throw Error(N+"NaN");return t.s?(E=!1,e=P(t,r,0,1).times(r),E=!0,t.minus(e)):h(new n(t),i)},A.naturalExponential=A.exp=function(){return i(this)},A.naturalLogarithm=A.ln=function(){return f(this)},A.negated=A.neg=function(){var r=new this.constructor(this);return r.s=-r.s||0,r},A.plus=A.add=function(r){var t=this;return r=new t.constructor(r),t.s==r.s?e(t,r):l(t,(r.s=-r.s,r))},A.precision=A.sd=function(r){var e,t,n,i=this;if(void 0!==r&&r!==!!r&&1!==r&&0!==r)throw Error(x+r);if(e=o(i)+1,n=i.d.length-1,t=n*y+1,n=i.d[n]){for(;n%10==0;n/=10)t--;for(n=i.d[0];n>=10;n/=10)t++}return r&&e>t?e:t},A.squareRoot=A.sqrt=function(){var r,e,t,i,s,u,f,c=this,l=c.constructor;if(c.s<1){if(!c.s)return new l(0);throw Error(N+"NaN")}for(r=o(c),E=!1,s=Math.sqrt(+c),0==s||s==1/0?(e=n(c.d),(e.length+r)%2==0&&(e+="0"),s=Math.sqrt(e),r=b((r+1)/2)-(0>r||r%2),s==1/0?e="1e"+r:(e=s.toExponential(),e=e.slice(0,e.indexOf("e")+1)+r),i=new l(e)):i=new l(s.toString()),t=l.precision,s=f=t+3;;)if(u=i,i=u.plus(P(c,u,f+2)).times(.5),n(u.d).slice(0,f)===(e=n(i.d)).slice(0,f)){if(e=e.slice(f-3,f+1),s==f&&"4999"==e){if(h(u,t+1,0),u.times(u).eq(c)){i=u;break}}else if("9999"!=e)break;f+=4}return E=!0,h(i,t)},A.times=A.mul=function(r){var e,t,n,i,o,s,u,f,c,l=this,d=l.constructor,a=l.d,g=(r=new d(r)).d;if(!l.s||!r.s)return new d(0);for(r.s*=l.s,t=l.e+r.e,f=a.length,c=g.length,c>f&&(o=a,a=g,g=o,s=f,f=c,c=s),o=[],s=f+c,n=s;n--;)o.push(0);for(n=c;--n>=0;){for(e=0,i=f+n;i>n;)u=o[i]+g[n]*a[i-n-1]+e,o[i--]=u%q|0,e=u/q|0;o[i]=(o[i]+e)%q|0}for(;!o[--s];)o.pop();for(e?++t:o.shift(),n=o.length;!o[--n];)o.pop();return r.d=o,r.e=t,E?h(r,d.precision):r},A.toDecimalPlaces=A.todp=function(r,e){var n=this,i=n.constructor;return n=new i(n),void 0===r?n:(t(r,0,w),void 0===e?e=i.rounding:t(e,0,8),h(n,r+o(n)+1,e))},A.toExponential=function(r,e){var n,i=this,o=i.constructor;return void 0===r?n=d(i,!0):(t(r,0,w),void 0===e?e=o.rounding:t(e,0,8),i=h(new o(i),r+1,e),n=d(i,!0,r+1)),n},A.toFixed=function(r,e){var n,i,s=this,u=s.constructor;return void 0===r?d(s):(t(r,0,w),void 0===e?e=u.rounding:t(e,0,8),i=h(new u(s),r+o(s)+1,e),n=d(i.abs(),!1,r+o(i)+1),s.isneg()&&!s.isZero()?"-"+n:n)},A.toInteger=A.toint=function(){var r=this,e=r.constructor;return h(new e(r),o(r)+1,e.rounding)},A.toNumber=function(){return+this},A.toPower=A.pow=function(r){var e,t,n,o,s,u,c=this,l=c.constructor,d=12,g=+(r=new l(r));if(!r.s)return new l(v);if(c=new l(c),!c.s){if(r.s<1)throw Error(N+"Infinity");return c}if(c.eq(v))return c;if(n=l.precision,r.eq(v))return h(c,n);if(e=r.e,t=r.d.length-1,u=e>=t,s=c.s,u){if((t=0>g?-g:g)<=M){for(o=new l(v),e=Math.ceil(n/y+4),E=!1;t%2&&(o=o.times(c),a(o.d,e)),t=b(t/2),0!==t;)c=c.times(c),a(c.d,e);return E=!0,r.s<0?new l(v).div(o):h(o,n)}}else if(0>s)throw Error(N+"NaN");return s=0>s&&1&r.d[Math.max(e,t)]?-1:1,c.s=1,E=!1,o=r.times(f(c,n+d)),E=!0,o=i(o),o.s=s,o},A.toPrecision=function(r,e){var n,i,s=this,u=s.constructor;return void 0===r?(n=o(s),i=d(s,n<=u.toExpNeg||n>=u.toExpPos)):(t(r,1,w),void 0===e?e=u.rounding:t(e,0,8),s=h(new u(s),r,e),n=o(s),i=d(s,n>=r||n<=u.toExpNeg,r)),i},A.toSignificantDigits=A.tosd=function(r,e){var n=this,i=n.constructor;return void 0===r?(r=i.precision,e=i.rounding):(t(r,1,w),void 0===e?e=i.rounding:t(e,0,8)),h(new i(n),r,e)},A.toString=A.valueOf=A.val=A.toJSON=function(){var r=this,e=o(r),t=r.constructor;return d(r,e<=t.toExpNeg||e>=t.toExpPos)};var P=function(){function r(r,e){var t,n=0,i=r.length;for(r=r.slice();i--;)t=r[i]*e+n,r[i]=t%q|0,n=t/q|0;return n&&r.unshift(n),r}function e(r,e,t,n){var i,o;if(t!=n)o=t>n?1:-1;else for(i=o=0;t>i;i++)if(r[i]!=e[i]){o=r[i]>e[i]?1:-1;break}return o}function t(r,e,t){for(var n=0;t--;)r[t]-=n,n=r[t]<e[t]?1:0,r[t]=n*q+r[t]-e[t];for(;!r[0]&&r.length>1;)r.shift()}return function(n,i,s,u){var f,c,l,d,a,g,p,v,w,m,E,x,O,b,L,D,M,_,A=n.constructor,P=n.s==i.s?1:-1,R=n.d,U=i.d;if(!n.s)return new A(n);if(!i.s)throw Error(N+"Division by zero");for(c=n.e-i.e,M=U.length,L=R.length,p=new A(P),v=p.d=[],l=0;U[l]==(R[l]||0);)++l;if(U[l]>(R[l]||0)&&--c,x=null==s?s=A.precision:u?s+(o(n)-o(i))+1:s,0>x)return new A(0);if(x=x/y+2|0,l=0,1==M)for(d=0,U=U[0],x++;(L>l||d)&&x--;l++)O=d*q+(R[l]||0),v[l]=O/U|0,d=O%U|0;else{for(d=q/(U[0]+1)|0,d>1&&(U=r(U,d),R=r(R,d),M=U.length,L=R.length),b=M,w=R.slice(0,M),m=w.length;M>m;)w[m++]=0;_=U.slice(),_.unshift(0),D=U[0],U[1]>=q/2&&++D;do d=0,f=e(U,w,M,m),0>f?(E=w[0],M!=m&&(E=E*q+(w[1]||0)),d=E/D|0,d>1?(d>=q&&(d=q-1),a=r(U,d),g=a.length,m=w.length,f=e(a,w,g,m),1==f&&(d--,t(a,g>M?_:U,g))):(0==d&&(f=d=1),a=U.slice()),g=a.length,m>g&&a.unshift(0),t(w,a,m),-1==f&&(m=w.length,f=e(U,w,M,m),1>f&&(d++,t(w,m>M?_:U,m))),m=w.length):0===f&&(d++,w=[0]),v[l++]=d,f&&w[0]?w[m++]=R[b]||0:(w=[R[b]],m=1);while((b++<L||void 0!==w[0])&&x--)}return v[0]||v.shift(),p.e=c,h(p,u?s+o(p)+1:s)}}();m=g(m),v=new m(1),"function"==typeof define&&define.amd?define(function(){return m}):"undefined"!=typeof module&&module.exports?module.exports=m["default"]=m.Decimal=m:(r||(r="undefined"!=typeof self&&self&&self.self==self?self:Function("return this")()),r.Decimal=m)}(this);
   </script>
+
 
 </body>
 </html>

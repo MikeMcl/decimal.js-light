@@ -96,6 +96,7 @@
    *  dividedBy                           div
    *  dividedToIntegerBy                  idiv
    *  equals                              eq
+   *  exponent
    *  greaterThan                         gt
    *  greaterThanOrEqualTo                gte
    *  isInteger                           isint
@@ -215,6 +216,15 @@
    */
   P.equals = P.eq = function (y) {
     return !this.cmp(y);
+  };
+
+
+  /*
+   * Return the (base 10) exponent value of this Decimal (this.e is the base 10000000 exponent).
+   *
+   */
+  P.exponent = function () {
+    return getBase10Exponent(this);
   };
 
 
@@ -589,9 +599,6 @@
     if (carry) ++e;
     else r.shift();
 
-    // Remove trailing zeros.
-    for (i = r.length; !r[--i];) r.pop();
-
     y.d = r;
     y.e = e;
 
@@ -890,8 +897,8 @@
    *  digitsToString      P.log, P.sqrt, P.pow, toString, exp, ln
    *  divide              P.div, P.idiv, P.log, P.mod, P.sqrt, exp, ln
    *  exp                 P.exp, P.pow
-   *  getBase10Exponent   P.sd, P.toint, P.sqrt, P.todp, P.toFixed, P.toPrecision, P.toString,
-   *                      divide, round, toString, exp, ln
+   *  getBase10Exponent   P.exponent, P.sd, P.toint, P.sqrt, P.todp, P.toFixed, P.toPrecision,
+   *                      P.toString, divide, round, toString, exp, ln
    *  getLn10             P.log, ln
    *  getZeroString       digitsToString, toString
    *  ln                  P.log, P.ln, P.pow, exp
@@ -1328,14 +1335,16 @@
 
   // Calculate the base 10 exponent from the base 1e7 exponent.
   function getBase10Exponent(x) {
+    var e = x.e * LOG_BASE,
+      w = x.d[0];
 
-    // First get the number of digits of the first word of the digits array.
-    for (var i = 1, w = x.d[0]; w >= 10; w /= 10) i++;
-    return i + x.e * LOG_BASE - 1;
+    // Add the number of digits of the first word of the digits array.
+    for (; w >= 10; w /= 10) e++;
+    return e;
   }
 
 
-   function getLn10(Ctor, sd, pr) {
+  function getLn10(Ctor, sd, pr) {
 
     if (sd > Ctor.LN10.sd()) {
 

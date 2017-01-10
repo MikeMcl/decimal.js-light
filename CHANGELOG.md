@@ -1,3 +1,7 @@
+#### 2.2.0
+10/01/2017
+* Add `exponent` method
+
 #### 2.0.2
 12/12/2016
 * npm publish

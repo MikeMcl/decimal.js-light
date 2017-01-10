@@ -99,6 +99,7 @@ li span{float:right;margin-right:10px;color:#c0c0c0}
       <li><a href="#div"          >dividedBy               </a><span>div</span>  </li>
       <li><a href="#idiv"         >dividedToIntegerBy      </a><span>idiv</span> </li>
       <li><a href="#eq"           >equals                  </a><span>eq</span>   </li>
+      <li><a href="#exp"          >exponent                </a>                  </li>
       <li><a href="#gt"           >greaterThan             </a><span>gt</span>   </li>
       <li><a href="#gte"          >greaterThanOrEqualTo    </a><span>gte</span>  </li>
       <li><a href="#isint"        >isInteger               </a><span>isint</span></li>
@@ -604,6 +605,14 @@ x.idiv(0.7)             // '7'</pre>
 0 === 1e-324                     // true
 x = new Decimal(0)
 x.equals('1e-324')               // false</pre>
+
+
+
+    <h5 id="exp">exponent<code class='inset'>.exponent() <i>&rArr; number</i></code></h5>
+    <p>Returns the exponent value of this Decimal.</p>
+    <pre>
+x = new Decimal(1234.567)
+x.exponent()                     // 3</pre>
 
 
 
@@ -1196,9 +1205,9 @@ y.toString()                             // '1.23456789'</pre>
       </tr>
       <tr>
         <td class='centre' id='exponent'><b>e</b></td>
-        <td>exponent</td>
+        <td>exponent*</td>
         <td><i>number</i></td>
-        <td>Integer, <code>-9007199254740991</code> to <code>9007199254740991</code> inclusive</td>
+        <td>Integer, <code>-1286742750677284</code> to <code>1286742750677284</code> inclusive</td>
       </tr>
       <tr>
         <td class='centre' id='sign'><b>s</b></td>
@@ -1207,6 +1216,10 @@ y.toString()                             // '1.23456789'</pre>
         <td><code>-1</code>, <code>0</code>, or <code>1</code></td>
       </tr>
     </table>
+     <p>
+      *This is the exponent in base <code>10000000</code>. To get the base 10 exponent, use the
+      <a href='#exp'><code>exponent</code></a> method.
+    </p>
     <p>The properties are best considered to be read-only.</p>
     <p>
       As with JavaScript numbers, the original exponent and fractional trailing zeros of a number
@@ -1226,8 +1239,6 @@ z.toExponential()                        // '-1.234567e+4'
 z.d                                      // [ 12345, 6700000 ]
 z.e                                      // 4
 z.s                                      // -1</pre>
-
-
 
 
 

@@ -1,3 +1,7 @@
+#### 2.2.1
+10/03/2017
+* Remove `tonum` from documentation
+
 #### 2.2.0
 10/01/2017
 * Add `exponent` method

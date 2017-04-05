@@ -1,3 +1,7 @@
+#### 2.2.2
+05/04/2017
+* `Decimal.default` to `Decimal['default']` IE8 issue
+
 #### 2.2.1
 10/03/2017
 * Remove `tonum` from documentation

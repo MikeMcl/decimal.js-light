@@ -2,8 +2,8 @@
 
 The light version of [decimal.js](https://github.com/MikeMcl/decimal.js/), an arbitrary-precision Decimal type for JavaScript.
 
-<br />
 [![Build Status](https://travis-ci.org/MikeMcl/decimal.js-light.svg)](https://travis-ci.org/MikeMcl/decimal.js-light)
+
 <br />
 
 This library is the newest of the family of libraries: [bignumber.js](https://github.com/MikeMcl/bignumber.js/), [big.js](https://github.com/MikeMcl/big.js/), [decimal.js](https://github.com/MikeMcl/decimal.js/) and *decimal.js-light*.<br>

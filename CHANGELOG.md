@@ -1,3 +1,7 @@
+#### 2.2.3
+* 04/05/2017
+* Fix *README* badge.
+
 #### 2.2.2
 05/04/2017
 * `Decimal.default` to `Decimal['default']` IE8 issue

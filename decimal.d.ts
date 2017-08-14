@@ -239,7 +239,7 @@ export declare class Decimal {
      * significant digits.
      *
      */
-    nartualExponetial(): Decimal;
+    naturalExponetial(): Decimal;
 
     /**
      * Return a new Decimal whose value is the natural exponential of the value of this Decimal,
@@ -254,7 +254,7 @@ export declare class Decimal {
      * truncated to `precision` significant digits.
      *
      */
-    nartualLogarithm(): Decimal;
+    naturalLogarithm(): Decimal;
 
     /**
      * Return a new Decimal whose value is the natural logarithm of the value of this Decimal,
@@ -518,6 +518,11 @@ export declare class Decimal {
      * Configure global settings for a Decimal constructor.
      */
     static config(config: Config): Decimal;
+
+    /**
+     * Configure global settings for a Decimal constructor.
+     */
+    static set(config: Config): Decimal;
 }
 
 export interface Config {
@@ -525,6 +530,7 @@ export interface Config {
     rounding?: number;
     toExpNeg?: number;
     toExpPos?: number;
+    LN10?: Numeric;
 }
 
 export type Numeric = string|number|Decimal;

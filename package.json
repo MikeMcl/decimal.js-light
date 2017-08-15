@@ -21,6 +21,7 @@
     "url": "https://github.com/MikeMcl/decimal.js-light.git"
   },
   "main": "decimal.js",
+  "types": "decimal.d.ts",
   "author": {
     "name": "Michael Mclaughlin",
     "email": "M8ch88l@gmail.com"

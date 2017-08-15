@@ -1,3 +1,8 @@
+#### 2.2.4
+* 15/08/2017
+* Add TypeScript type declaration file, *decimal.d.ts*. 
+* Correct `toPositive` and `toNegative` examples.
+
 #### 2.2.3
 * 04/05/2017
 * Fix *README* badge.

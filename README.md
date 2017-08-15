@@ -84,5 +84,9 @@ phi.times(2).minus(1).toPower(2).plus('1e-19').equals(5);    // true
 
 See the [documentation](http://mikemcl.github.io/decimal.js-light) for further information.
 
+[TypeScript](https://github.com/Microsoft/TypeScript) type declaration file contributed by [TANAKA Koichi](https://github.com/MugeSo).
+
+
+
 
 

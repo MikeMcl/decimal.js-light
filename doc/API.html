@@ -667,8 +667,8 @@ y.isint()                                // false</pre>
       <code>false</code>.
     </p>
     <pre>
-x = new Decimal(-0)
-x.isNegative()                           // true
+x = new Decimal(0)
+x.isNegative()                           // false
 y = new Decimal(2)
 y.isneg                                  // false</pre>
     <p>Note: <code>n &lt; 0</code> can be used if <code>n &lt;= -Number.MIN_VALUE</code>.</p>
@@ -682,7 +682,7 @@ y.isneg                                  // false</pre>
     </p>
     <pre>
 x = new Decimal(0)
-x.isPositive()                           // true
+x.isPositive()                           // false
 y = new Decimal(-2)
 y.ispos                                  // false</pre>
     <p>Note: <code>n &lt; 0</code> can be used if <code>n &lt;= -Number.MIN_VALUE</code>.</p>

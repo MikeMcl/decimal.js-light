@@ -45,7 +45,7 @@ Decimal.set({
 });
 ```
 
-In this library the `e` property of a Decimal is the base 10000000 exponent, not the base 10 exponent as in *decimal.js*.<br>
+Also, in this library the `e` property of a Decimal is the base 10000000 exponent, not the base 10 exponent as in *decimal.js*.<br>
 Use the `exponent` method to get the base 10 exponent.
 
 ## Quickstart

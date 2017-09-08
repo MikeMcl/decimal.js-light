@@ -1983,6 +1983,8 @@
   // Create and configure initial Decimal constructor.
   Decimal = clone(Decimal);
 
+  Decimal['default'] = Decimal.Decimal = Decimal;
+
   // Internal constant.
   ONE = new Decimal(1);
 
@@ -1998,7 +2000,7 @@
 
   // Node and other environments that support module.exports.
   } else if (typeof module != 'undefined' && module.exports) {
-    module.exports = Decimal['default'] = Decimal.Decimal = Decimal;
+    module.exports = Decimal;
 
     // Browser.
   } else {

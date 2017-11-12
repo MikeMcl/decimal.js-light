@@ -523,6 +523,38 @@ export declare class Decimal {
      * Configure global settings for a Decimal constructor.
      */
     static set(config: Config): Decimal;
+
+    // The maximum number of significant digits of the result of a calculation or base conversion.
+    // E.g. `Decimal.config({ precision: 20 });`
+    static readonly precision: number;
+
+    // The rounding mode used by default by `toInteger`, `toDecimalPlaces`, `toExponential`,
+    // `toFixed`, `toPrecision` and `toSignificantDigits`.
+    //
+    // E.g.
+    // `Decimal.rounding = 4;`
+    // `Decimal.rounding = Decimal.ROUND_HALF_UP;`
+    static rounding: number;
+    static readonly ROUND_UP: number;
+    static readonly ROUND_DOWN: number;
+    static readonly ROUND_CEIL: number;
+    static readonly ROUND_FLOOR: number;
+    static readonly ROUND_HALF_UP: number;
+    static readonly ROUND_HALF_DOWN: number;
+    static readonly ROUND_HALF_EVEN: number;
+    static readonly ROUND_HALF_CEIL: number;
+    static readonly ROUND_HALF_FLOOR: number;
+
+    // The exponent value at and beneath which `toString` returns exponential notation.
+    // JavaScript numbers: -7
+    static readonly toExpNeg: number;                          // 0 to -MAX_E
+
+    // The exponent value at and above which `toString` returns exponential notation.
+    // JavaScript numbers: 21
+    static readonly toExpPos:  number;                         // 0 to MAX_E
+
+    // The natural logarithm of 10.
+    static readonly LN10: Decimal;
 }
 
 export interface Config {

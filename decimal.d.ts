@@ -526,7 +526,7 @@ export declare class Decimal {
 
     // The maximum number of significant digits of the result of a calculation or base conversion.
     // E.g. `Decimal.config({ precision: 20 });`
-    static readonly precision: number;
+    static precision: number;
 
     // The rounding mode used by default by `toInteger`, `toDecimalPlaces`, `toExponential`,
     // `toFixed`, `toPrecision` and `toSignificantDigits`.
@@ -547,14 +547,14 @@ export declare class Decimal {
 
     // The exponent value at and beneath which `toString` returns exponential notation.
     // JavaScript numbers: -7
-    static readonly toExpNeg: number;                          // 0 to -MAX_E
+    static toExpNeg: number;                          // 0 to -MAX_E
 
     // The exponent value at and above which `toString` returns exponential notation.
     // JavaScript numbers: 21
-    static readonly toExpPos:  number;                         // 0 to MAX_E
+    static toExpPos:  number;                         // 0 to MAX_E
 
     // The natural logarithm of 10.
-    static readonly LN10: Decimal;
+    static LN10: Decimal;
 }
 
 export interface Config {

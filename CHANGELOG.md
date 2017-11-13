@@ -1,3 +1,8 @@
+#### 2.3.1
+* 13/11/2017
+* Add constructor properties to typings.
+* Amend `LN10` section of *doc/API.html*.
+
 #### 2.3.0
 * 26/09/2017
 * Add *bignumber.mjs*.

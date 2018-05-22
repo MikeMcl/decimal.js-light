@@ -20,7 +20,8 @@
     "type": "git",
     "url": "https://github.com/MikeMcl/decimal.js-light.git"
   },
-  "main": "decimal.js",
+  "main": "decimal",
+  "module": "decimal.mjs",
   "types": "decimal.d.ts",
   "author": {
     "name": "Michael Mclaughlin",

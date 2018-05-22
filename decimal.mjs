@@ -1977,9 +1977,7 @@ function config(obj) {
 
 
 // Create and configure initial Decimal constructor.
-Decimal = clone(defaults);
-
-Decimal['default'] = Decimal.Decimal = Decimal;
+export var Decimal = clone(defaults);
 
 // Internal constant.
 ONE = new Decimal(1);

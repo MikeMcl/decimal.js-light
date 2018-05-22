@@ -1,3 +1,8 @@
+#### 2.4.0
+* 22/05/2018
+* Amend *.mjs* exports.
+* Remove extension from `main` field in *package.json*.
+
 #### 2.3.1
 * 13/11/2017
 * Add constructor properties to typings.

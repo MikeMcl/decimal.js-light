@@ -1,3 +1,7 @@
+#### 2.4.1
+* 24/05/2018
+* Add `browser` field to *package.json*.
+
 #### 2.4.0
 * 22/05/2018
 * Amend *.mjs* exports.

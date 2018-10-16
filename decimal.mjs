@@ -1,8 +1,8 @@
 /*
- *  decimal.js-light v2.4.1
+ *  decimal.js-light v2.5.0
  *  An arbitrary-precision Decimal type for JavaScript.
  *  https://github.com/MikeMcl/decimal.js-light
- *  Copyright (c) 2017 Michael Mclaughlin <M8ch88l@gmail.com>
+ *  Copyright (c) 2018 Michael Mclaughlin <M8ch88l@gmail.com>
  *  MIT Expat Licence
  */
 

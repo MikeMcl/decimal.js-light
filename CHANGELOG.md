@@ -1,3 +1,8 @@
+#### 2.5.0
+* 16/10/2018
+* Add default export to *decimal.d.ts*.
+* Add `Symbol.for('nodejs.util.inspect.custom')` to *decimal.mjs*.
+
 #### 2.4.1
 * 24/05/2018
 * Add `browser` field to *package.json*.

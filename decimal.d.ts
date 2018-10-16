@@ -1,3 +1,5 @@
+export default Decimal;
+
 export declare class Decimal {
     /**
      * The Decimal constructor and exported function.

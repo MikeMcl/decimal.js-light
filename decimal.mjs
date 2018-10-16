@@ -875,7 +875,7 @@ P.toSignificantDigits = P.tosd = function (sd, rm) {
  * `toExpPos`, or a negative exponent equal to or less than `toExpNeg`.
  *
  */
-P.toString = P.valueOf = P.val = P.toJSON = function () {
+P.toString = P.valueOf = P.val = P.toJSON = P[Symbol.for('nodejs.util.inspect.custom')] = function () {
   var x = this,
     e = getBase10Exponent(x),
     Ctor = x.constructor;

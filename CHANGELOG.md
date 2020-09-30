@@ -1,3 +1,7 @@
+#### 2.5.1
+* 30/09/2020
+* Correct initial `sqrt` estimate.
+
 #### 2.5.0
 * 16/10/2018
 * Add default export to *decimal.d.ts*.
